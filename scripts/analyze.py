@@ -1077,21 +1077,24 @@ def _build_local_checkup(summary: dict) -> dict:
         items = "\n".join([f"- {line}" for line in lines])
         return f"### {title}\n{items}"
 
-    content = "\n\n".join(
-        [
-            _block("概況摘要", [overview]),
-            _block("優勢亮點", highlights),
-            _block("風險與盲點", risks),
-            _block("可執行的下一步", next_steps),
-            "非投資建議",
-        ]
-    )
+    sections = [
+        {"title": "概況摘要", "items": [overview]},
+        {"title": "優勢亮點", "items": highlights or ["暫無。"]},
+        {"title": "風險與盲點", "items": risks or ["暫無。"]},
+        {"title": "可執行的下一步", "items": next_steps},
+        {"title": "風險提示", "items": ["非投資建議"]},
+    ]
+
+    content = "\n\n".join([
+        _block(section["title"], section["items"]) for section in sections
+    ])
 
     return {
         "enabled": True,
         "model": "local-summary",
         "generated_at": datetime.now(timezone.utc).isoformat(timespec="seconds"),
         "content": content,
+        "sections": sections,
         "fallback_used": True,
     }
 

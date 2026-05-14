@@ -142,7 +142,7 @@ python -m http.server 8000 --directory docs
 流程會：
 
 1. 安裝 Python 3.12。
-2. 安裝 `pandas numpy`。
+2. 安裝 `pandas numpy requests`。
 3. 執行 `python scripts/analyze.py`。
 4. 將 `data/output.json` 複製到 `docs/output.json`。
 5. 自動 commit 分析結果。
@@ -151,4 +151,4 @@ python -m http.server 8000 --directory docs
 
 - 投入成本尚未定義，報酬率與 Sharpe Ratio 暫停。
 - 未提供現倉參考檔，因此持倉驗算功能停用。
-- 目前價格來源為最後成交價，未連接即時或收盤行情。
+- 目前價格來源以 TWSE OpenAPI 收盤價為主，失敗時才使用最後成交價。

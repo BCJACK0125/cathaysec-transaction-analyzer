@@ -98,10 +98,51 @@
     .recommendation.warn { border-color: rgba(245, 158, 11, 0.44); }
     .recommendation.info { border-color: rgba(34, 211, 238, 0.36); }
 
-    .llm-content h3 { font-size: 1.05rem; font-weight: 700; margin-top: 12px; }
-    .llm-content p { margin-top: 8px; color: var(--text); }
-    .llm-content ul { margin-top: 6px; padding-left: 18px; list-style: disc; color: var(--text); }
-    .llm-content li { margin-top: 4px; }
+    .llm-content {
+      display: grid;
+      gap: 16px;
+    }
+
+    .llm-section {
+      padding: 14px 16px;
+      border-radius: 10px;
+      border: 1px solid rgba(148, 163, 184, 0.22);
+      background: linear-gradient(135deg, rgba(15, 23, 42, 0.86), rgba(30, 41, 59, 0.55));
+      box-shadow: inset 0 0 0 1px rgba(15, 23, 42, 0.24);
+    }
+
+    .llm-section h3 {
+      font-size: 0.95rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #bae6fd;
+    }
+
+    .llm-section p {
+      margin-top: 8px;
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    .llm-section ul {
+      margin-top: 10px;
+      padding-left: 18px;
+      list-style: disc;
+      color: var(--text);
+    }
+
+    .llm-section li { margin-top: 6px; }
+
+    .llm-disclaimer {
+      font-size: 0.82rem;
+      color: var(--muted);
+      padding: 10px 12px;
+      border-radius: 8px;
+      border: 1px dashed rgba(148, 163, 184, 0.3);
+      background: rgba(15, 23, 42, 0.7);
+      text-align: center;
+    }
     .llm-content code {
       padding: 1px 4px;
       border-radius: 6px;
@@ -109,6 +150,49 @@
       border: 1px solid rgba(148, 163, 184, 0.25);
       font-size: 0.85em;
     }
+
+    .llm-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 14px;
+    }
+
+    .llm-card {
+      position: relative;
+      padding: 14px 16px;
+      border-radius: 10px;
+      border: 1px solid rgba(125, 211, 252, 0.24);
+      background: rgba(8, 16, 32, 0.92);
+      box-shadow: inset 0 0 0 1px rgba(15, 23, 42, 0.24), 0 12px 30px rgba(0, 0, 0, 0.3);
+    }
+
+    .llm-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(34, 211, 238, 0.16), transparent 65%);
+      opacity: 0.7;
+      pointer-events: none;
+    }
+
+    .llm-card h3 {
+      position: relative;
+      font-size: 0.88rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #a5f3fc;
+    }
+
+    .llm-card ul {
+      position: relative;
+      margin-top: 10px;
+      padding-left: 18px;
+      list-style: disc;
+      color: var(--text);
+    }
+
+    .llm-card li { margin-top: 6px; }
 
     .app-section {
       opacity: 0;
@@ -613,6 +697,103 @@
       });
     };
 
+    const escapeHtml = (value) => {
+      if (value === null || value === undefined) return "";
+      return String(value)
+        .replaceAll("&", "&amp;")
+        .replaceAll("<", "&lt;")
+        .replaceAll(">", "&gt;")
+        .replaceAll('"', "&quot;");
+    };
+
+    const renderLLMContent = (raw) => {
+      if (!raw) return "";
+      const lines = escapeHtml(raw).split(/\r?\n/);
+      let html = "";
+      let inSection = false;
+      let inList = false;
+
+      const closeList = () => {
+        if (inList) {
+          html += "</ul>";
+          inList = false;
+        }
+      };
+
+      const closeSection = () => {
+        closeList();
+        if (inSection) {
+          html += "</section>";
+          inSection = false;
+        }
+      };
+
+      lines.forEach((line) => {
+        if (line.startsWith("### ")) {
+          closeSection();
+          const title = line.slice(4).trim();
+          html += `<section class="llm-section"><h3>${title}</h3>`;
+          inSection = true;
+          return;
+        }
+
+        if (line.trim() === "") {
+          closeList();
+          return;
+        }
+
+        if (line.startsWith("- ")) {
+          if (!inSection) {
+            html += "<section class=\"llm-section\">";
+            inSection = true;
+          }
+          if (!inList) {
+            html += "<ul>";
+            inList = true;
+          }
+          html += `<li>${line.slice(2).trim()}</li>`;
+          return;
+        }
+
+        if (line.includes("非投資建議")) {
+          closeSection();
+          html += `<div class="llm-disclaimer">${line.trim()}</div>`;
+          return;
+        }
+
+        if (!inSection) {
+          html += "<section class=\"llm-section\">";
+          inSection = true;
+        }
+        closeList();
+        html += `<p>${line.trim()}</p>`;
+      });
+
+      closeSection();
+      closeList();
+      return html;
+    };
+
+    const renderLLMSections = (sections) => {
+      if (!Array.isArray(sections) || sections.length === 0) return "";
+      let html = "<div class=\"llm-grid\">";
+      sections.forEach((section) => {
+        const title = escapeHtml(section.title || "");
+        const items = Array.isArray(section.items) ? section.items : [];
+        html += `<div class="llm-card"><h3>${title}</h3>`;
+        if (items.length) {
+          html += "<ul>";
+          items.forEach((item) => {
+            html += `<li>${escapeHtml(item)}</li>`;
+          });
+          html += "</ul>";
+        }
+        html += "</div>";
+      });
+      html += "</div>";
+      return html;
+    };
+
     const applyLLM = (data) => {
       const llm = data.llm_checkup || {};
       if (!llm.enabled) {
@@ -620,7 +801,11 @@
         return;
       }
       byId.llmPanel.classList.remove("hidden");
-      byId.llmContent.innerHTML = llm.content || "";
+      if (Array.isArray(llm.sections) && llm.sections.length) {
+        byId.llmContent.innerHTML = renderLLMSections(llm.sections);
+      } else {
+        byId.llmContent.innerHTML = renderLLMContent(llm.content || "");
+      }
       byId.llmModel.textContent = llm.model || "Model";
       byId.llmGeneratedAt.textContent = llm.generated_at ? new Date(llm.generated_at).toLocaleString() : "";
     };
