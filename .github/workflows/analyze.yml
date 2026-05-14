@@ -1,0 +1,54 @@
+name: Run Analysis
+
+permissions:
+  contents: write
+
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - "data/transactions.csv"
+      - "scripts/*.py"
+      - ".github/workflows/analyze.yml"
+
+jobs:
+  analyze:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install deps
+        run: pip install pandas numpy requests
+
+      - name: Run analysis
+        env:
+          LLM_API_KEY: ${{ secrets.LLM_API_KEY }}
+          LLM_API_URL: ${{ secrets.LLM_API_URL }}
+          LLM_MODEL: ${{ secrets.LLM_MODEL }}
+          LLM_TEMPERATURE: ${{ secrets.LLM_TEMPERATURE }}
+          LLM_MAX_TOKENS: ${{ secrets.LLM_MAX_TOKENS }}
+          LLM_TIMEOUT: ${{ secrets.LLM_TIMEOUT }}
+          LLM_HTTP_REFERER: ${{ secrets.LLM_HTTP_REFERER }}
+          LLM_APP_TITLE: ${{ secrets.LLM_APP_TITLE }}
+        run: python scripts/analyze.py
+
+      - name: Sync outputs to docs
+        run: |
+          mkdir -p docs
+          cp data/output.json docs/output.json
+
+      - name: Commit results
+        run: |
+          git config user.name "github-actions"
+          git config user.email "actions@github.com"
+          git add data/output.json data/report.html docs/output.json
+          git commit -m "update analysis" || echo "no changes"
+          git push

@@ -1,0 +1,814 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cathay Securities Portfolio Command</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    :root {
+      --bg: #070b16;
+      --panel: rgba(10, 18, 32, 0.88);
+      --panel-2: rgba(15, 23, 42, 0.72);
+      --line: rgba(125, 211, 252, 0.22);
+      --line-soft: rgba(148, 163, 184, 0.18);
+      --text: #e5edf7;
+      --muted: #91a2b8;
+      --cyan: #22d3ee;
+      --green: #22c55e;
+      --red: #fb7185;
+      --amber: #f59e0b;
+      --magenta: #f472b6;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      min-height: 100vh;
+      color: var(--text);
+      font-family: "Space Grotesk", "Noto Sans TC", "Microsoft JhengHei", sans-serif;
+      background:
+        linear-gradient(90deg, rgba(125, 211, 252, 0.08) 1px, transparent 1px),
+        linear-gradient(180deg, rgba(125, 211, 252, 0.06) 1px, transparent 1px),
+        linear-gradient(135deg, #070b16 0%, #0f172a 48%, #111827 100%);
+      background-size: 76px 76px, 76px 76px, auto;
+    }
+
+    .shell { max-width: 1240px; margin: 0 auto; padding: 24px; }
+
+    .panel {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      box-shadow: 0 18px 48px rgba(0, 0, 0, 0.34), inset 0 1px 0 rgba(255, 255, 255, 0.04);
+      backdrop-filter: blur(14px);
+    }
+
+    .card {
+      background: var(--panel-2);
+      border: 1px solid var(--line-soft);
+      border-radius: 8px;
+    }
+
+    .label {
+      color: var(--muted);
+      font-size: 0.72rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .value { font-size: 1.45rem; font-weight: 700; line-height: 1.25; }
+    .muted { color: var(--muted); }
+    .positive { color: var(--green); }
+    .negative { color: var(--red); }
+    .cyan { color: var(--cyan); }
+    .amber { color: var(--amber); }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 3px 9px;
+      color: #bae6fd;
+      background: rgba(8, 47, 73, 0.38);
+      font-size: 0.76rem;
+      white-space: nowrap;
+    }
+
+    .tag.current { color: #bbf7d0; border-color: rgba(34, 197, 94, 0.45); background: rgba(20, 83, 45, 0.34); }
+    .tag.closed { color: #cbd5e1; border-color: rgba(148, 163, 184, 0.35); background: rgba(30, 41, 59, 0.48); }
+    .tag.warn { color: #fde68a; border-color: rgba(245, 158, 11, 0.5); background: rgba(120, 53, 15, 0.32); }
+    .tag.bad { color: #fecdd3; border-color: rgba(251, 113, 133, 0.5); background: rgba(136, 19, 55, 0.32); }
+
+    .recommendation {
+      min-height: 118px;
+      padding: 14px;
+      border-radius: 8px;
+      background: rgba(15, 23, 42, 0.72);
+      border: 1px solid rgba(148, 163, 184, 0.18);
+    }
+
+    .recommendation.praise { border-color: rgba(34, 197, 94, 0.36); }
+    .recommendation.warn { border-color: rgba(245, 158, 11, 0.44); }
+    .recommendation.info { border-color: rgba(34, 211, 238, 0.36); }
+
+    .llm-content h3 { font-size: 1.05rem; font-weight: 700; margin-top: 12px; }
+    .llm-content p { margin-top: 8px; color: var(--text); }
+    .llm-content ul { margin-top: 6px; padding-left: 18px; list-style: disc; color: var(--text); }
+    .llm-content li { margin-top: 4px; }
+    .llm-content code {
+      padding: 1px 4px;
+      border-radius: 6px;
+      background: rgba(15, 23, 42, 0.8);
+      border: 1px solid rgba(148, 163, 184, 0.25);
+      font-size: 0.85em;
+    }
+
+    .app-section {
+      opacity: 0;
+      transform: translateY(8px);
+      transition: opacity 0.42s ease, transform 0.42s ease;
+    }
+
+    body.is-ready .app-section {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    body.is-loading .app-section {
+      position: absolute;
+      left: -9999px;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+      opacity: 0;
+    }
+
+    body.is-ready #skeletonDashboard,
+    body.is-error #skeletonDashboard {
+      display: none;
+    }
+
+    .skeleton-line,
+    .skeleton-block,
+    .skeleton-pill {
+      position: relative;
+      overflow: hidden;
+      border-radius: 8px;
+      background: rgba(30, 41, 59, 0.72);
+      border: 1px solid rgba(125, 211, 252, 0.08);
+    }
+
+    .skeleton-line::after,
+    .skeleton-block::after,
+    .skeleton-pill::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      transform: translateX(-100%);
+      background: linear-gradient(90deg, transparent, rgba(125, 211, 252, 0.22), transparent);
+      animation: skeleton-scan 1.35s linear infinite;
+    }
+
+    .skeleton-line { height: 14px; }
+    .skeleton-block { min-height: 118px; }
+    .skeleton-pill { width: 84px; height: 24px; border-radius: 999px; }
+
+    .skeleton-card {
+      min-height: 112px;
+      padding: 16px;
+      border-radius: 8px;
+      background: rgba(15, 23, 42, 0.72);
+      border: 1px solid rgba(148, 163, 184, 0.16);
+    }
+
+    .skeleton-row {
+      display: grid;
+      grid-template-columns: minmax(120px, 0.9fr) repeat(4, minmax(96px, 1fr)) minmax(140px, 1.1fr);
+      gap: 14px;
+      align-items: center;
+      padding: 14px;
+      border-bottom: 1px solid rgba(148, 163, 184, 0.1);
+    }
+
+    @keyframes skeleton-scan {
+      to { transform: translateX(100%); }
+    }
+
+    select, button {
+      border: 1px solid rgba(125, 211, 252, 0.26);
+      border-radius: 8px;
+      background: rgba(15, 23, 42, 0.92);
+      color: var(--text);
+      min-height: 36px;
+    }
+
+    button { padding: 0 12px; transition: border-color 0.18s ease, color 0.18s ease, background 0.18s ease; }
+    button.is-active { color: #07111f; border-color: var(--cyan); background: var(--cyan); }
+    select { padding: 0 10px; }
+
+    .chart-box { position: relative; height: 280px; }
+    .scroll-pane { max-height: 620px; overflow: auto; padding-right: 4px; }
+    .scroll-pane::-webkit-scrollbar { width: 8px; }
+    .scroll-pane::-webkit-scrollbar-thumb { background: rgba(125, 211, 252, 0.32); border-radius: 999px; }
+
+    .symbol-row {
+      display: grid;
+      grid-template-columns: minmax(120px, 0.9fr) repeat(4, minmax(96px, 1fr)) minmax(140px, 1.1fr);
+      gap: 14px;
+      align-items: center;
+      padding: 13px 14px;
+      border-bottom: 1px solid rgba(148, 163, 184, 0.12);
+    }
+
+    .symbol-row:last-child { border-bottom: 0; }
+    .symbol-row.current { border-left: 3px solid var(--green); }
+    .symbol-row.closed { border-left: 3px solid #64748b; }
+
+    .audit-row {
+      display: grid;
+      grid-template-columns: 1.05fr 1.2fr repeat(3, minmax(86px, 0.7fr)) 70px;
+      gap: 12px;
+      align-items: center;
+      padding: 11px 12px;
+      border-bottom: 1px solid rgba(148, 163, 184, 0.12);
+      font-size: 0.86rem;
+    }
+
+    @media (max-width: 860px) {
+      .shell { padding: 16px; }
+      .symbol-row, .audit-row { grid-template-columns: 1fr; gap: 6px; }
+      .skeleton-row { grid-template-columns: 1fr; gap: 8px; }
+      .chart-box { height: 240px; }
+    }
+  </style>
+</head>
+<body class="is-loading">
+  <main class="shell space-y-5">
+    <header class="panel p-5">
+      <div class="flex flex-col gap-4 lg:flex-row lg:items-end lg:justify-between">
+        <div>
+          <div class="flex flex-wrap gap-2">
+            <span class="tag">Portfolio Command</span>
+            <span id="dataStatus" class="tag">LOADING</span>
+          </div>
+          <h1 class="mt-4 text-3xl font-bold tracking-normal">國泰證券資產指揮艙</h1>
+          <p class="mt-2 max-w-3xl text-sm muted">總體績效、風險調整報酬、對帳驗算與個股盈虧集中監控。</p>
+        </div>
+        <div class="text-sm lg:text-right">
+          <p class="label">Last Update</p>
+          <p id="lastUpdated" class="mt-1 text-lg font-semibold">--</p>
+        </div>
+      </div>
+    </header>
+
+    <section id="loadingOverlay" class="panel p-5">
+      <div class="flex items-center justify-between">
+        <h2 class="font-semibold">載入中</h2>
+        <span class="tag">Sync</span>
+      </div>
+      <p class="mt-2 text-sm muted">正在取得最新分析資料...</p>
+    </section>
+
+    <section id="emptyState" class="panel hidden p-5">
+      <h2 class="font-semibold">資料尚未就緒</h2>
+      <p class="mt-2 text-sm muted">請確認 `docs/output.json` 已由分析流程產生。</p>
+    </section>
+
+    <section id="skeletonDashboard" class="space-y-5">
+      <section class="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+        <div class="skeleton-card"><div class="skeleton-line w-24"></div><div class="skeleton-line mt-5 w-36"></div><div class="skeleton-line mt-3 w-20"></div></div>
+        <div class="skeleton-card"><div class="skeleton-line w-28"></div><div class="skeleton-line mt-5 w-32"></div><div class="skeleton-line mt-3 w-24"></div></div>
+        <div class="skeleton-card"><div class="skeleton-line w-32"></div><div class="skeleton-line mt-5 w-28"></div><div class="skeleton-line mt-3 w-24"></div></div>
+        <div class="skeleton-card"><div class="skeleton-line w-28"></div><div class="skeleton-line mt-5 w-24"></div><div class="skeleton-line mt-3 w-36"></div></div>
+        <div class="skeleton-card"><div class="skeleton-line w-20"></div><div class="skeleton-line mt-5 w-24"></div><div class="skeleton-line mt-3 w-20"></div></div>
+        <div class="skeleton-card"><div class="skeleton-line w-28"></div><div class="skeleton-line mt-5 w-24"></div><div class="skeleton-line mt-3 w-24"></div></div>
+        <div class="skeleton-card"><div class="skeleton-line w-24"></div><div class="skeleton-line mt-5 w-20"></div><div class="skeleton-line mt-3 w-28"></div></div>
+        <div class="skeleton-card"><div class="skeleton-line w-24"></div><div class="skeleton-line mt-5 w-16"></div><div class="skeleton-line mt-3 w-24"></div></div>
+      </section>
+
+      <section class="panel p-5">
+        <div class="mb-4 flex items-center justify-between gap-3">
+          <div class="space-y-2">
+            <div class="skeleton-line w-28"></div>
+            <div class="skeleton-line w-40"></div>
+          </div>
+          <div class="skeleton-pill"></div>
+        </div>
+        <div class="grid gap-3 md:grid-cols-2 xl:grid-cols-3">
+          <div class="skeleton-block"></div>
+          <div class="skeleton-block"></div>
+          <div class="skeleton-block"></div>
+        </div>
+      </section>
+
+      <section class="grid gap-5 xl:grid-cols-3">
+        <div class="panel p-5 xl:col-span-2">
+          <div class="mb-4 flex items-center justify-between">
+            <div class="space-y-2"><div class="skeleton-line w-28"></div><div class="skeleton-line w-44"></div></div>
+            <div class="flex gap-2"><div class="skeleton-pill"></div><div class="skeleton-pill"></div><div class="skeleton-pill"></div></div>
+          </div>
+          <div class="skeleton-block" style="height:280px"></div>
+        </div>
+        <div class="panel p-5">
+          <div class="space-y-2"><div class="skeleton-line w-28"></div><div class="skeleton-line w-36"></div></div>
+          <div class="skeleton-block mt-4" style="height:280px"></div>
+          <div class="mt-4 space-y-2"><div class="skeleton-line"></div><div class="skeleton-line w-5/6"></div><div class="skeleton-line w-2/3"></div></div>
+        </div>
+      </section>
+
+      <section class="grid gap-5 xl:grid-cols-3">
+        <div class="panel p-5 xl:col-span-2">
+          <div class="mb-4 flex items-center justify-between">
+            <div class="space-y-2"><div class="skeleton-line w-32"></div><div class="skeleton-line w-44"></div></div>
+            <div class="flex gap-2"><div class="skeleton-pill"></div><div class="skeleton-pill"></div></div>
+          </div>
+          <div class="card">
+            <div class="skeleton-row"><div class="skeleton-line"></div><div class="skeleton-line"></div><div class="skeleton-line"></div><div class="skeleton-line"></div><div class="skeleton-line"></div><div class="skeleton-line"></div></div>
+            <div class="skeleton-row"><div class="skeleton-line"></div><div class="skeleton-line"></div><div class="skeleton-line"></div><div class="skeleton-line"></div><div class="skeleton-line"></div><div class="skeleton-line"></div></div>
+            <div class="skeleton-row"><div class="skeleton-line"></div><div class="skeleton-line"></div><div class="skeleton-line"></div><div class="skeleton-line"></div><div class="skeleton-line"></div><div class="skeleton-line"></div></div>
+          </div>
+        </div>
+        <div class="panel p-5">
+          <div class="space-y-2"><div class="skeleton-line w-28"></div><div class="skeleton-line w-44"></div></div>
+          <div class="mt-5 grid grid-cols-2 gap-3">
+            <div class="skeleton-card"></div><div class="skeleton-card"></div><div class="skeleton-card"></div><div class="skeleton-card"></div>
+          </div>
+        </div>
+      </section>
+    </section>
+
+    <section class="app-section grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+      <div class="card p-4">
+        <p class="label">Total PnL</p>
+        <p id="total" class="value mt-2">-</p>
+      </div>
+      <div class="card p-4">
+        <p class="label">Total Realized</p>
+        <p id="realizedPnl" class="value mt-2">-</p>
+      </div>
+      <div class="card p-4">
+        <p class="label">Total Unrealized</p>
+        <p id="unrealizedPnl" class="value mt-2">-</p>
+      </div>
+      <div class="card p-4">
+        <p class="label">Return on Capital</p>
+        <p id="returnPct" class="value mt-2">-</p>
+        <p id="investedCost" class="mt-1 text-xs muted">-</p>
+      </div>
+      <div class="card p-4">
+        <p class="label">Win Rate</p>
+        <p id="winRate" class="value mt-2">-</p>
+      </div>
+      <div class="card p-4">
+        <p class="label">Profit Factor</p>
+        <p id="profitFactor" class="value mt-2">-</p>
+      </div>
+      <div class="card p-4">
+        <p class="label">Sharpe Ratio</p>
+        <p id="sharpeRatio" class="value mt-2">-</p>
+        <p id="riskFreeLabel" class="mt-1 text-xs muted">-</p>
+      </div>
+      <div class="card p-4">
+        <p class="label">Health Score</p>
+        <p id="healthScore" class="value mt-2">-</p>
+      </div>
+      <div class="card p-4">
+        <p class="label">Max Drawdown</p>
+        <p id="maxDrawdown" class="value mt-2">-</p>
+      </div>
+    </section>
+
+    <section class="app-section panel p-5">
+      <div class="mb-4 flex flex-wrap items-center justify-between gap-3">
+        <div>
+          <p class="label">Advisor Notes</p>
+          <h2 class="text-lg font-semibold">分析建議</h2>
+        </div>
+        <span id="investedMethod" class="tag">Capital Basis</span>
+      </div>
+      <div id="recommendationList" class="grid gap-3 md:grid-cols-2 xl:grid-cols-3"></div>
+    </section>
+
+    <section id="llmPanel" class="app-section panel p-5">
+      <div class="mb-4 flex flex-wrap items-center justify-between gap-3">
+        <div>
+          <p class="label">LLM Checkup</p>
+          <h2 class="text-lg font-semibold">投資健檢 (AI)</h2>
+        </div>
+        <div class="flex flex-wrap items-center gap-2 text-xs">
+          <span id="llmModel" class="tag">Model</span>
+          <span id="llmGeneratedAt" class="tag">Generated</span>
+        </div>
+      </div>
+      <div id="llmContent" class="llm-content text-sm muted"></div>
+      <p class="mt-4 text-xs muted">AI 產出僅供參考，請自行判斷風險。</p>
+    </section>
+
+    <section class="app-section grid gap-5 xl:grid-cols-3">
+      <div class="panel p-5 xl:col-span-2">
+        <div class="mb-4 flex flex-wrap items-center justify-between gap-3">
+          <div>
+            <p class="label">Equity Curve</p>
+            <h2 class="text-lg font-semibold">績效曲線與回撤</h2>
+          </div>
+          <div class="flex flex-wrap gap-2">
+            <button class="timeframe-btn is-active" data-period="daily">Daily</button>
+            <button class="timeframe-btn" data-period="weekly">Weekly</button>
+            <button class="timeframe-btn" data-period="monthly">Monthly</button>
+          </div>
+        </div>
+        <div class="chart-box">
+          <canvas id="equityChart"></canvas>
+        </div>
+      </div>
+      <div class="panel p-5">
+        <div>
+          <p class="label">PnL Distribution</p>
+          <h2 class="text-lg font-semibold">損益結構</h2>
+        </div>
+        <div class="chart-box mt-4">
+          <canvas id="pnlChart"></canvas>
+        </div>
+        <p id="pnlNote" class="mt-4 text-xs muted">-</p>
+      </div>
+    </section>
+
+    <section class="app-section grid gap-5 xl:grid-cols-3">
+      <div class="panel p-5 xl:col-span-2">
+        <div class="mb-4 flex flex-wrap items-center justify-between gap-3">
+          <div>
+            <p class="label">Symbol Radar</p>
+            <h2 class="text-lg font-semibold">個股盈虧雷達</h2>
+          </div>
+          <div class="flex flex-wrap gap-2">
+            <button class="filter-btn is-active" data-filter="all">全部</button>
+            <button class="filter-btn" data-filter="current">現持有</button>
+            <button class="filter-btn" data-filter="closed">已結清</button>
+          </div>
+        </div>
+        <div class="card">
+          <div class="symbol-row label">
+            <span>Symbol</span>
+            <span>Qty</span>
+            <span>Total PnL</span>
+            <span>Unrealized</span>
+            <span>Realized</span>
+            <span>Last Trade</span>
+          </div>
+          <div id="symbolList" class="scroll-pane"></div>
+        </div>
+      </div>
+      <div class="panel p-5">
+        <div>
+          <p class="label">Risk Snapshot</p>
+          <h2 class="text-lg font-semibold">風險概況</h2>
+        </div>
+        <div class="mt-5 grid grid-cols-2 gap-3">
+          <div class="card p-3">
+            <p class="label">Cash Balance</p>
+            <p id="cashBalance" class="value mt-2 text-lg">-</p>
+          </div>
+          <div class="card p-3">
+            <p class="label">Cash Stock</p>
+            <p id="cashStock" class="value mt-2 text-lg">-</p>
+          </div>
+          <div class="card p-3">
+            <p class="label">Margin Stock</p>
+            <p id="marginStock" class="value mt-2 text-lg">-</p>
+          </div>
+          <div class="card p-3">
+            <p class="label">Other</p>
+            <p id="otherAsset" class="value mt-2 text-lg">-</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="app-section panel p-5">
+      <div class="mb-4 flex flex-wrap items-center justify-between gap-3">
+        <div>
+          <p class="label">Audit Checks</p>
+          <h2 class="text-lg font-semibold">指標驗算</h2>
+        </div>
+        <span id="auditStatus" class="tag">-</span>
+      </div>
+      <div class="card">
+        <div class="audit-row label">
+          <span>Metric</span>
+          <span>Formula</span>
+          <span>Expected</span>
+          <span>Actual</span>
+          <span>Delta</span>
+          <span>Status</span>
+        </div>
+        <div id="auditList" class="scroll-pane"></div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    const state = {
+      data: null,
+      charts: {},
+      timeframe: "daily",
+      filters: "all",
+    };
+
+    const el = (id) => document.getElementById(id);
+    const fmt = (value, digits = 2) => {
+      if (value === null || value === undefined || Number.isNaN(value)) return "-";
+      const num = Number(value);
+      if (!Number.isFinite(num)) return "-";
+      return num.toLocaleString("en-US", { maximumFractionDigits: digits, minimumFractionDigits: digits });
+    };
+
+    const fmtPct = (value) => {
+      if (value === null || value === undefined || Number.isNaN(value)) return "-";
+      return `${(Number(value) * 100).toFixed(2)}%`;
+    };
+
+    const tagClass = (value) => {
+      if (value === null || value === undefined || Number.isNaN(value)) return "muted";
+      return Number(value) >= 0 ? "positive" : "negative";
+    };
+
+    const byId = {
+      total: el("total"),
+      realizedPnl: el("realizedPnl"),
+      unrealizedPnl: el("unrealizedPnl"),
+      returnPct: el("returnPct"),
+      investedCost: el("investedCost"),
+      winRate: el("winRate"),
+      profitFactor: el("profitFactor"),
+      sharpeRatio: el("sharpeRatio"),
+      riskFreeLabel: el("riskFreeLabel"),
+      healthScore: el("healthScore"),
+      maxDrawdown: el("maxDrawdown"),
+      cashBalance: el("cashBalance"),
+      cashStock: el("cashStock"),
+      marginStock: el("marginStock"),
+      otherAsset: el("otherAsset"),
+      investedMethod: el("investedMethod"),
+      recommendationList: el("recommendationList"),
+      llmPanel: el("llmPanel"),
+      llmContent: el("llmContent"),
+      llmModel: el("llmModel"),
+      llmGeneratedAt: el("llmGeneratedAt"),
+      symbolList: el("symbolList"),
+      auditList: el("auditList"),
+      auditStatus: el("auditStatus"),
+      dataStatus: el("dataStatus"),
+      lastUpdated: el("lastUpdated"),
+      pnlNote: el("pnlNote"),
+    };
+
+    const fetchData = async () => {
+      const stamp = Date.now();
+      const resp = await fetch(`./output.json?v=${stamp}`);
+      if (!resp.ok) throw new Error("missing output.json");
+      return resp.json();
+    };
+
+    const applySummary = (data) => {
+      const health = data.health || {};
+      const performance = data.performance_summary || {};
+      const risk = data.risk_metrics || {};
+      const timeseries = data.timeseries || {};
+      const asset = data.asset_allocation || {};
+
+      byId.total.textContent = fmt(health.total);
+      byId.total.className = `value mt-2 ${tagClass(health.total)}`;
+      byId.realizedPnl.textContent = fmt(performance.realized_pnl);
+      byId.realizedPnl.className = `value mt-2 ${tagClass(performance.realized_pnl)}`;
+      byId.unrealizedPnl.textContent = fmt(performance.unrealized_pnl);
+      byId.unrealizedPnl.className = `value mt-2 ${tagClass(performance.unrealized_pnl)}`;
+
+      if (performance.enabled) {
+        byId.returnPct.textContent = fmtPct(performance.return_pct);
+        byId.returnPct.className = `value mt-2 ${tagClass(performance.return_pct)}`;
+        byId.investedCost.textContent = `Invested: ${fmt(performance.invested_cost)}`;
+        byId.investedMethod.textContent = "Capital Basis";
+      } else {
+        byId.returnPct.textContent = "--";
+        byId.returnPct.className = "value mt-2";
+        byId.investedCost.textContent = "Invested: N/A";
+        byId.investedMethod.textContent = "Disabled";
+      }
+
+      byId.winRate.textContent = fmtPct(health.win_rate || 0);
+      byId.profitFactor.textContent = fmt(health.profit_factor || 0);
+      byId.healthScore.textContent = fmt(health.score || 0, 1);
+      byId.maxDrawdown.textContent = fmt(timeseries.max_drawdown?.daily || 0);
+      byId.maxDrawdown.className = `value mt-2 ${tagClass(timeseries.max_drawdown?.daily || 0)}`;
+
+      if (risk.enabled) {
+        byId.sharpeRatio.textContent = fmt(risk.sharpe_ratio, 2);
+        byId.riskFreeLabel.textContent = risk.risk_free?.label || "";
+      } else {
+        byId.sharpeRatio.textContent = "--";
+        byId.riskFreeLabel.textContent = risk.reason || "";
+      }
+
+      byId.cashBalance.textContent = fmt(asset.cash_balance || 0);
+      byId.cashStock.textContent = fmt(asset.cash_stock || 0);
+      byId.marginStock.textContent = fmt(asset.margin_stock || 0);
+      byId.otherAsset.textContent = fmt(asset.other || 0);
+    };
+
+    const applyRecommendations = (data) => {
+      const list = data.recommendations || [];
+      byId.recommendationList.innerHTML = "";
+      list.forEach((item) => {
+        const div = document.createElement("div");
+        div.className = `recommendation ${item.tone || "info"}`;
+        div.innerHTML = `<h3 class="font-semibold">${item.title || ""}</h3><p class="mt-2 text-sm muted">${item.body || ""}</p>`;
+        byId.recommendationList.appendChild(div);
+      });
+    };
+
+    const applyLLM = (data) => {
+      const llm = data.llm_checkup || {};
+      if (!llm.enabled) {
+        byId.llmPanel.classList.add("hidden");
+        return;
+      }
+      byId.llmPanel.classList.remove("hidden");
+      byId.llmContent.innerHTML = llm.content || "";
+      byId.llmModel.textContent = llm.model || "Model";
+      byId.llmGeneratedAt.textContent = llm.generated_at ? new Date(llm.generated_at).toLocaleString() : "";
+    };
+
+    const renderSymbolList = (data) => {
+      const symbols = data.symbol_analysis?.symbols || [];
+      const filtered = symbols.filter((row) => {
+        if (state.filters === "current") return row.status === "current";
+        if (state.filters === "closed") return row.status === "closed";
+        return true;
+      });
+
+      byId.symbolList.innerHTML = "";
+      filtered.forEach((row) => {
+        const div = document.createElement("div");
+        div.className = `symbol-row ${row.status}`;
+        div.innerHTML = `
+          <div>
+            <div class="font-semibold">${row.symbol}</div>
+            <div class="text-xs muted">${row.price_source || ""}</div>
+          </div>
+          <div>${fmt(row.qty, 2)}</div>
+          <div class="${tagClass(row.total_pnl)}">${fmt(row.total_pnl)}</div>
+          <div class="${tagClass(row.unrealized_pnl)}">${fmt(row.unrealized_pnl)}</div>
+          <div class="${tagClass(row.realized_pnl)}">${fmt(row.realized_pnl)}</div>
+          <div class="text-sm muted">${row.last_trade_date || "-"}</div>
+        `;
+        byId.symbolList.appendChild(div);
+      });
+    };
+
+    const renderAudit = (data) => {
+      const audit = data.metric_audit || {};
+      const checks = audit.checks || [];
+      byId.auditList.innerHTML = "";
+      byId.auditStatus.textContent = audit.status || "-";
+      byId.auditStatus.className = `tag ${audit.status === "ok" ? "current" : "warn"}`;
+
+      checks.forEach((row) => {
+        const div = document.createElement("div");
+        const statusClass = row.status === "ok" ? "current" : "warn";
+        div.className = "audit-row";
+        div.innerHTML = `
+          <span>${row.name}</span>
+          <span class="text-xs muted">${row.formula}</span>
+          <span>${fmt(row.expected)}</span>
+          <span>${fmt(row.actual)}</span>
+          <span class="${tagClass(row.delta)}">${fmt(row.delta)}</span>
+          <span class="tag ${statusClass}">${row.status}</span>
+        `;
+        byId.auditList.appendChild(div);
+      });
+    };
+
+    const renderCharts = (data) => {
+      const series = data.timeseries || {};
+      const daily = series[state.timeframe] || [];
+
+      const labels = daily.map((row) => row.date);
+      const totals = daily.map((row) => row.cumulative_total);
+      const drawdown = daily.map((row) => row.drawdown);
+
+      const equityCtx = document.getElementById("equityChart").getContext("2d");
+      if (state.charts.equity) state.charts.equity.destroy();
+      state.charts.equity = new Chart(equityCtx, {
+        type: "line",
+        data: {
+          labels,
+          datasets: [
+            {
+              label: "Cumulative",
+              data: totals,
+              borderColor: "#22d3ee",
+              backgroundColor: "rgba(34, 211, 238, 0.12)",
+              fill: true,
+              tension: 0.2,
+            },
+            {
+              label: "Drawdown",
+              data: drawdown,
+              borderColor: "#fb7185",
+              backgroundColor: "rgba(251, 113, 133, 0.12)",
+              fill: true,
+              tension: 0.2,
+            },
+          ],
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            legend: { labels: { color: "#e2e8f0" } },
+          },
+          scales: {
+            x: { ticks: { color: "#94a3b8" }, grid: { color: "rgba(148, 163, 184, 0.12)" } },
+            y: { ticks: { color: "#94a3b8" }, grid: { color: "rgba(148, 163, 184, 0.12)" } },
+          },
+        },
+      });
+
+      const pnlCtx = document.getElementById("pnlChart").getContext("2d");
+      if (state.charts.pnl) state.charts.pnl.destroy();
+      state.charts.pnl = new Chart(pnlCtx, {
+        type: "doughnut",
+        data: {
+          labels: ["Realized", "Unrealized"],
+          datasets: [
+            {
+              data: [data.performance_summary?.realized_pnl || 0, data.performance_summary?.unrealized_pnl || 0],
+              backgroundColor: ["#22c55e", "#f59e0b"],
+            },
+          ],
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          plugins: {
+            legend: { labels: { color: "#e2e8f0" } },
+          },
+        },
+      });
+
+      byId.pnlNote.textContent = `Realized ${fmt(data.performance_summary?.realized_pnl || 0)} / Unrealized ${fmt(data.performance_summary?.unrealized_pnl || 0)}`;
+    };
+
+    const updateTimeframeButtons = () => {
+      document.querySelectorAll(".timeframe-btn").forEach((btn) => {
+        btn.classList.toggle("is-active", btn.dataset.period === state.timeframe);
+      });
+    };
+
+    const updateFilterButtons = () => {
+      document.querySelectorAll(".filter-btn").forEach((btn) => {
+        btn.classList.toggle("is-active", btn.dataset.filter === state.filters);
+      });
+    };
+
+    const wireControls = () => {
+      document.querySelectorAll(".timeframe-btn").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          state.timeframe = btn.dataset.period;
+          updateTimeframeButtons();
+          renderCharts(state.data);
+        });
+      });
+
+      document.querySelectorAll(".filter-btn").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          state.filters = btn.dataset.filter;
+          updateFilterButtons();
+          renderSymbolList(state.data);
+        });
+      });
+    };
+
+    const renderAll = () => {
+      applySummary(state.data);
+      applyRecommendations(state.data);
+      applyLLM(state.data);
+      renderSymbolList(state.data);
+      renderAudit(state.data);
+      renderCharts(state.data);
+
+      const lastUpdate = state.data.timeseries?.daily?.slice(-1)[0]?.date || "--";
+      byId.lastUpdated.textContent = lastUpdate;
+      byId.dataStatus.textContent = "READY";
+      byId.dataStatus.className = "tag current";
+    };
+
+    const init = async () => {
+      try {
+        state.data = await fetchData();
+        document.body.classList.remove("is-loading");
+        document.body.classList.add("is-ready");
+        el("loadingOverlay").classList.add("hidden");
+        renderAll();
+        wireControls();
+      } catch (err) {
+        document.body.classList.remove("is-loading");
+        document.body.classList.add("is-error");
+        el("loadingOverlay").classList.add("hidden");
+        el("emptyState").classList.remove("hidden");
+        byId.dataStatus.textContent = "ERROR";
+        byId.dataStatus.className = "tag bad";
+      }
+    };
+
+    init();
+  </script>
+</body>
+</html>

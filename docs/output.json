@@ -1,0 +1,1796 @@
+{
+  "realized": [
+    {
+      "symbol": "\u5143\u5927\u9ad8\u80a1\u606f",
+      "buy_date": "2024-04-01 00:00:00",
+      "buy_price": 39.85,
+      "sell_date": "2024-04-09 00:00:00",
+      "sell_price": 39.95,
+      "qty": 125.0,
+      "pnl": 12.500000000000178,
+      "side": "long",
+      "account_type": "\u73fe\u91d1",
+      "realized_date": "2024-04-09 00:00:00"
+    },
+    {
+      "symbol": "\u570b\u5de8*",
+      "buy_date": "2025-09-26 00:00:00",
+      "buy_price": 168.0,
+      "sell_date": "2026-01-22 00:00:00",
+      "sell_price": 299.0,
+      "qty": 10.0,
+      "pnl": 1310.0,
+      "side": "long",
+      "account_type": "\u73fe\u91d1",
+      "realized_date": "2026-01-22 00:00:00"
+    },
+    {
+      "symbol": "\u4e2d\u63a2\u91dd",
+      "buy_date": "2026-01-21 00:00:00",
+      "buy_price": 65.1,
+      "sell_date": "2026-01-22 00:00:00",
+      "sell_price": 62.6,
+      "qty": 100.0,
+      "pnl": -249.9999999999993,
+      "side": "long",
+      "account_type": "\u73fe\u91d1",
+      "realized_date": "2026-01-22 00:00:00"
+    },
+    {
+      "symbol": "\u71ff\u83ef",
+      "buy_date": "2026-01-13 00:00:00",
+      "buy_price": 35.0,
+      "sell_date": "2026-01-23 00:00:00",
+      "sell_price": 43.7,
+      "qty": 120.0,
+      "pnl": 1044.0000000000005,
+      "side": "long",
+      "account_type": "\u73fe\u91d1",
+      "realized_date": "2026-01-23 00:00:00"
+    },
+    {
+      "symbol": "\u570b\u6cf0\u6c38\u7e8c\u9ad8\u80a1\u606f",
+      "buy_date": "2024-04-12 00:00:00",
+      "buy_price": 22.75,
+      "sell_date": "2026-01-26 00:00:00",
+      "sell_price": 23.11,
+      "qty": 87.0,
+      "pnl": 31.31999999999995,
+      "side": "long",
+      "account_type": "\u73fe\u91d1",
+      "realized_date": "2026-01-26 00:00:00"
+    },
+    {
+      "symbol": "\u570b\u6cf0\u6c38\u7e8c\u9ad8\u80a1\u606f",
+      "buy_date": "2024-05-02 00:00:00",
+      "buy_price": 22.26,
+      "sell_date": "2026-01-26 00:00:00",
+      "sell_price": 23.11,
+      "qty": 89.0,
+      "pnl": 75.6499999999998,
+      "side": "long",
+      "account_type": "\u73fe\u91d1",
+      "realized_date": "2026-01-26 00:00:00"
+    },
+    {
+      "symbol": "\u570b\u6cf0\u6c38\u7e8c\u9ad8\u80a1\u606f",
+      "buy_date": "2024-06-03 00:00:00",
+      "buy_price": 23.22,
+      "sell_date": "2026-01-26 00:00:00",
+      "sell_price": 23.11,
+      "qty": 86.0,
+      "pnl": -9.459999999999951,
+      "side": "long",
+      "account_type": "\u73fe\u91d1",
+      "realized_date": "2026-01-26 00:00:00"
+    },
+    {
+      "symbol": "\u570b\u6cf0\u6c38\u7e8c\u9ad8\u80a1\u606f",
+      "buy_date": "2024-07-01 00:00:00",
+      "buy_price": 23.88,
+      "sell_date": "2026-01-26 00:00:00",
+      "sell_price": 23.11,
+      "qty": 167.0,
+      "pnl": -128.58999999999992,
+      "side": "long",
+      "account_type": "\u73fe\u91d1",
+      "realized_date": "2026-01-26 00:00:00"
+    },
+    {
+      "symbol": "\u570b\u6cf0\u6c38\u7e8c\u9ad8\u80a1\u606f",
+      "buy_date": "2024-08-01 00:00:00",
+      "buy_price": 23.32,
+      "sell_date": "2026-01-26 00:00:00",
+      "sell_price": 23.11,
+      "qty": 171.0,
+      "pnl": -35.910000000000146,
+      "side": "long",
+      "account_type": "\u73fe\u91d1",
+      "realized_date": "2026-01-26 00:00:00"
+    },
+    {
+      "symbol": "\u570b\u6cf0\u6c38\u7e8c\u9ad8\u80a1\u606f",
+      "buy_date": "2024-08-05 00:00:00",
+      "buy_price": 21.58,
+      "sell_date": "2026-01-26 00:00:00",
+      "sell_price": 23.11,
+      "qty": 400.0,
+      "pnl": 612.0000000000005,
+      "side": "long",
+      "account_type": "\u73fe\u91d1",
+      "realized_date": "2026-01-26 00:00:00"
+    },
+    {
+      "symbol": "\u4e2d\u63a2\u91dd",
+      "buy_date": "2026-01-21 00:00:00",
+      "buy_price": 65.1,
+      "sell_date": "2026-01-26 00:00:00",
+      "sell_price": 65.9,
+      "qty": 900.0,
+      "pnl": 720.0000000000102,
+      "side": "long",
+      "account_type": "\u73fe\u91d1",
+      "realized_date": "2026-01-26 00:00:00"
+    },
+    {
+      "symbol": "\u4e2d\u63a2\u91dd",
+      "buy_date": "2026-01-21 00:00:00",
+      "buy_price": 63.5,
+      "sell_date": "2026-01-26 00:00:00",
+      "sell_price": 65.9,
+      "qty": 100.0,
+      "pnl": 240.00000000000057,
+      "side": "long",
+      "account_type": "\u73fe\u91d1",
+      "realized_date": "2026-01-26 00:00:00"
+    },
+    {
+      "symbol": "\u4e2d\u63a2\u91dd",
+      "buy_date": "2026-01-21 00:00:00",
+      "buy_price": 61.2,
+      "sell_date": "2026-01-26 00:00:00",
+      "sell_price": 66.1,
+      "qty": 100.0,
+      "pnl": 489.99999999999915,
+      "side": "long",
+      "account_type": "\u73fe\u91d1",
+      "realized_date": "2026-01-26 00:00:00"
+    },
+    {
+      "symbol": "\u7fa4\u76ca\u53f0\u7063\u7cbe\u9078\u9ad8\u606f",
+      "buy_date": "2024-11-04 00:00:00",
+      "buy_price": 23.15,
+      "sell_date": "2026-01-27 00:00:00",
+      "sell_price": 24.27,
+      "qty": 500.0,
+      "pnl": 560.0000000000005,
+      "side": "long",
+      "account_type": "\u73fe\u91d1",
+      "realized_date": "2026-01-27 00:00:00"
+    },
+    {
+      "symbol": "\u4e2d\u5de5",
+      "buy_date": "2026-01-27 00:00:00",
+      "buy_price": 14.95,
+      "sell_date": "2026-02-11 00:00:00",
+      "sell_price": 15.4,
+      "qty": 1000.0,
+      "pnl": 450.0000000000011,
+      "side": "long",
+      "account_type": "\u73fe\u91d1",
+      "realized_date": "2026-02-11 00:00:00"
+    },
+    {
+      "symbol": "\u4e2d\u63a2\u91dd",
+      "buy_date": "2026-01-27 00:00:00",
+      "buy_price": 68.2,
+      "sell_date": "2026-02-23 00:00:00",
+      "sell_price": 69.1,
+      "qty": 1000.0,
+      "pnl": 899.9999999999915,
+      "side": "long",
+      "account_type": "\u73fe\u91d1",
+      "realized_date": "2026-02-23 00:00:00"
+    },
+    {
+      "symbol": "\u4e2d\u63a2\u91dd",
+      "buy_date": "2026-01-29 00:00:00",
+      "buy_price": 61.9,
+      "sell_date": "2026-02-23 00:00:00",
+      "sell_price": 70.1,
+      "qty": 70.0,
+      "pnl": 573.9999999999997,
+      "side": "long",
+      "account_type": "\u73fe\u91d1",
+      "realized_date": "2026-02-23 00:00:00"
+    },
+    {
+      "symbol": "\u4e2d\u63a2\u91dd",
+      "buy_date": "2026-02-04 00:00:00",
+      "buy_price": 60.0,
+      "sell_date": "2026-02-23 00:00:00",
+      "sell_price": 70.1,
+      "qty": 100.0,
+      "pnl": 1009.9999999999994,
+      "side": "long",
+      "account_type": "\u73fe\u91d1",
+      "realized_date": "2026-02-23 00:00:00"
+    },
+    {
+      "symbol": "\u570b\u5de8*",
+      "buy_date": "2025-09-26 00:00:00",
+      "buy_price": 168.0,
+      "sell_date": "2026-02-24 00:00:00",
+      "sell_price": 301.0,
+      "qty": 5.0,
+      "pnl": 665.0,
+      "side": "long",
+      "account_type": "\u73fe\u91d1",
+      "realized_date": "2026-02-24 00:00:00"
+    },
+    {
+      "symbol": "\u958e\u5eb7",
+      "buy_date": "2025-09-26 00:00:00",
+      "buy_price": 204.5,
+      "sell_date": "2026-02-26 00:00:00",
+      "sell_price": 228.5,
+      "qty": 80.0,
+      "pnl": 1920.0,
+      "side": "long",
+      "account_type": "\u73fe\u91d1",
+      "realized_date": "2026-02-26 00:00:00"
+    },
+    {
+      "symbol": "\u4e2d\u5de5",
+      "buy_date": "2026-02-25 00:00:00",
+      "buy_price": 16.7,
+      "sell_date": "2026-03-04 00:00:00",
+      "sell_price": 16.8,
+      "qty": 10.0,
+      "pnl": 1.0000000000000142,
+      "side": "long",
+      "account_type": "\u73fe\u91d1",
+      "realized_date": "2026-03-04 00:00:00"
+    },
+    {
+      "symbol": "\u958e\u5eb7",
+      "buy_date": "2025-09-26 00:00:00",
+      "buy_price": 204.5,
+      "sell_date": "2026-03-19 00:00:00",
+      "sell_price": 209.0,
+      "qty": 100.0,
+      "pnl": 450.0,
+      "side": "long",
+      "account_type": "\u73fe\u91d1",
+      "realized_date": "2026-03-19 00:00:00"
+    },
+    {
+      "symbol": "\u958e\u5eb7",
+      "buy_date": "2025-09-26 00:00:00",
+      "buy_price": 204.5,
+      "sell_date": "2026-03-20 00:00:00",
+      "sell_price": 229.5,
+      "qty": 20.0,
+      "pnl": 500.0,
+      "side": "long",
+      "account_type": "\u73fe\u91d1",
+      "realized_date": "2026-03-20 00:00:00"
+    },
+    {
+      "symbol": "\u958e\u5eb7",
+      "buy_date": "2025-11-13 00:00:00",
+      "buy_price": 192.0,
+      "sell_date": "2026-03-20 00:00:00",
+      "sell_price": 229.5,
+      "qty": 80.0,
+      "pnl": 3000.0,
+      "side": "long",
+      "account_type": "\u73fe\u91d1",
+      "realized_date": "2026-03-20 00:00:00"
+    },
+    {
+      "symbol": "\u958e\u5eb7",
+      "buy_date": "2025-11-13 00:00:00",
+      "buy_price": 192.0,
+      "sell_date": "2026-03-23 00:00:00",
+      "sell_price": 252.0,
+      "qty": 50.0,
+      "pnl": 3000.0,
+      "side": "long",
+      "account_type": "\u73fe\u91d1",
+      "realized_date": "2026-03-23 00:00:00"
+    },
+    {
+      "symbol": "\u71ff\u83ef",
+      "buy_date": "2026-03-03 00:00:00",
+      "buy_price": 72.7,
+      "sell_date": "2026-03-27 00:00:00",
+      "sell_price": 81.5,
+      "qty": 10.0,
+      "pnl": 87.99999999999997,
+      "side": "long",
+      "account_type": "\u73fe\u91d1",
+      "realized_date": "2026-03-27 00:00:00"
+    },
+    {
+      "symbol": "\u71ff\u83ef",
+      "buy_date": "2026-03-09 00:00:00",
+      "buy_price": 62.1,
+      "sell_date": "2026-03-27 00:00:00",
+      "sell_price": 81.5,
+      "qty": 2.0,
+      "pnl": 38.8,
+      "side": "long",
+      "account_type": "\u73fe\u91d1",
+      "realized_date": "2026-03-27 00:00:00"
+    },
+    {
+      "symbol": "\u570b\u5de8*",
+      "buy_date": "2025-09-26 00:00:00",
+      "buy_price": 168.0,
+      "sell_date": "2026-04-24 00:00:00",
+      "sell_price": 299.5,
+      "qty": 5.0,
+      "pnl": 657.5,
+      "side": "long",
+      "account_type": "\u73fe\u91d1",
+      "realized_date": "2026-04-24 00:00:00"
+    },
+    {
+      "symbol": "\u6280\u5609",
+      "buy_date": "2026-02-25 00:00:00",
+      "buy_price": 237.5,
+      "sell_date": "2026-04-24 00:00:00",
+      "sell_price": 279.5,
+      "qty": 10.0,
+      "pnl": 420.0,
+      "side": "long",
+      "account_type": "\u73fe\u91d1",
+      "realized_date": "2026-04-24 00:00:00"
+    },
+    {
+      "symbol": "\u7a69\u61cb",
+      "buy_date": "2026-03-20 00:00:00",
+      "buy_price": 345.0,
+      "sell_date": "2026-04-24 00:00:00",
+      "sell_price": 557.0,
+      "qty": 5.0,
+      "pnl": 1060.0,
+      "side": "long",
+      "account_type": "\u73fe\u91d1",
+      "realized_date": "2026-04-24 00:00:00"
+    },
+    {
+      "symbol": "\u69ae\u79d1",
+      "buy_date": "2026-03-20 00:00:00",
+      "buy_price": 73.3,
+      "sell_date": "2026-04-24 00:00:00",
+      "sell_price": 108.0,
+      "qty": 5.0,
+      "pnl": 173.5,
+      "side": "long",
+      "account_type": "\u73fe\u91d1",
+      "realized_date": "2026-04-24 00:00:00"
+    },
+    {
+      "symbol": "\u570b\u6cf0\u6c38\u7e8c\u9ad8\u80a1\u606f",
+      "buy_date": "2024-08-05 00:00:00",
+      "buy_price": 21.58,
+      "sell_date": "2026-04-28 00:00:00",
+      "sell_price": 25.36,
+      "qty": 600.0,
+      "pnl": 2268.000000000001,
+      "side": "long",
+      "account_type": "\u73fe\u91d1",
+      "realized_date": "2026-04-28 00:00:00"
+    },
+    {
+      "symbol": "\u570b\u6cf0\u6c38\u7e8c\u9ad8\u80a1\u606f",
+      "buy_date": "2024-09-02 00:00:00",
+      "buy_price": 22.92,
+      "sell_date": "2026-04-28 00:00:00",
+      "sell_price": 25.36,
+      "qty": 174.0,
+      "pnl": 424.5599999999996,
+      "side": "long",
+      "account_type": "\u73fe\u91d1",
+      "realized_date": "2026-04-28 00:00:00"
+    },
+    {
+      "symbol": "\u570b\u6cf0\u6c38\u7e8c\u9ad8\u80a1\u606f",
+      "buy_date": "2024-11-12 00:00:00",
+      "buy_price": 22.99,
+      "sell_date": "2026-04-28 00:00:00",
+      "sell_price": 25.36,
+      "qty": 226.0,
+      "pnl": 535.6200000000002,
+      "side": "long",
+      "account_type": "\u73fe\u91d1",
+      "realized_date": "2026-04-28 00:00:00"
+    },
+    {
+      "symbol": "\u7fa4\u76ca\u53f0\u7063\u7cbe\u9078\u9ad8\u606f",
+      "buy_date": "2024-11-04 00:00:00",
+      "buy_price": 23.15,
+      "sell_date": "2026-04-29 00:00:00",
+      "sell_price": 23.63,
+      "qty": 500.0,
+      "pnl": 240.00000000000023,
+      "side": "long",
+      "account_type": "\u73fe\u91d1",
+      "realized_date": "2026-04-29 00:00:00"
+    },
+    {
+      "symbol": "\u570b\u6cf0\u6c38\u7e8c\u9ad8\u80a1\u606f",
+      "buy_date": "2024-11-12 00:00:00",
+      "buy_price": 22.99,
+      "sell_date": "2026-04-30 00:00:00",
+      "sell_price": 25.55,
+      "qty": 774.0,
+      "pnl": 1981.4400000000019,
+      "side": "long",
+      "account_type": "\u73fe\u91d1",
+      "realized_date": "2026-04-30 00:00:00"
+    },
+    {
+      "symbol": "\u570b\u6cf0\u6c38\u7e8c\u9ad8\u80a1\u606f",
+      "buy_date": "2024-11-18 00:00:00",
+      "buy_price": 22.14,
+      "sell_date": "2026-04-30 00:00:00",
+      "sell_price": 25.55,
+      "qty": 226.0,
+      "pnl": 770.6600000000001,
+      "side": "long",
+      "account_type": "\u73fe\u91d1",
+      "realized_date": "2026-04-30 00:00:00"
+    },
+    {
+      "symbol": "\u7a69\u61cb",
+      "buy_date": "2026-03-20 00:00:00",
+      "buy_price": 345.0,
+      "sell_date": "2026-04-30 00:00:00",
+      "sell_price": 542.0,
+      "qty": 5.0,
+      "pnl": 985.0,
+      "side": "long",
+      "account_type": "\u73fe\u91d1",
+      "realized_date": "2026-04-30 00:00:00"
+    },
+    {
+      "symbol": "\u7a69\u61cb",
+      "buy_date": "2026-04-27 00:00:00",
+      "buy_price": 503.0,
+      "sell_date": "2026-04-30 00:00:00",
+      "sell_price": 542.0,
+      "qty": 3.0,
+      "pnl": 117.0,
+      "side": "long",
+      "account_type": "\u73fe\u91d1",
+      "realized_date": "2026-04-30 00:00:00"
+    },
+    {
+      "symbol": "\u570b\u6cf0\u6c38\u7e8c\u9ad8\u80a1\u606f",
+      "buy_date": "2024-11-18 00:00:00",
+      "buy_price": 22.14,
+      "sell_date": "2026-05-04 00:00:00",
+      "sell_price": 26.15,
+      "qty": 774.0,
+      "pnl": 3103.7399999999984,
+      "side": "long",
+      "account_type": "\u73fe\u91d1",
+      "realized_date": "2026-05-04 00:00:00"
+    },
+    {
+      "symbol": "\u570b\u6cf0\u6c38\u7e8c\u9ad8\u80a1\u606f",
+      "buy_date": "2024-11-18 00:00:00",
+      "buy_price": 22.13,
+      "sell_date": "2026-05-04 00:00:00",
+      "sell_price": 26.15,
+      "qty": 226.0,
+      "pnl": 908.5199999999999,
+      "side": "long",
+      "account_type": "\u73fe\u91d1",
+      "realized_date": "2026-05-04 00:00:00"
+    },
+    {
+      "symbol": "\u69ae\u79d1",
+      "buy_date": "2026-03-20 00:00:00",
+      "buy_price": 73.3,
+      "sell_date": "2026-05-05 00:00:00",
+      "sell_price": 104.0,
+      "qty": 25.0,
+      "pnl": 767.5000000000001,
+      "side": "long",
+      "account_type": "\u73fe\u91d1",
+      "realized_date": "2026-05-05 00:00:00"
+    },
+    {
+      "symbol": "\u5357\u8302",
+      "buy_date": "2026-03-03 00:00:00",
+      "buy_price": 62.0,
+      "sell_date": "2026-05-05 00:00:00",
+      "sell_price": 84.1,
+      "qty": 5.0,
+      "pnl": 110.49999999999997,
+      "side": "long",
+      "account_type": "\u73fe\u91d1",
+      "realized_date": "2026-05-05 00:00:00"
+    },
+    {
+      "symbol": "\u5357\u8302",
+      "buy_date": "2026-03-03 00:00:00",
+      "buy_price": 62.0,
+      "sell_date": "2026-05-06 00:00:00",
+      "sell_price": 89.1,
+      "qty": 5.0,
+      "pnl": 135.49999999999997,
+      "side": "long",
+      "account_type": "\u73fe\u91d1",
+      "realized_date": "2026-05-06 00:00:00"
+    },
+    {
+      "symbol": "\u570b\u6cf0\u6c38\u7e8c\u9ad8\u80a1\u606f",
+      "buy_date": "2024-11-18 00:00:00",
+      "buy_price": 22.13,
+      "sell_date": "2026-05-07 00:00:00",
+      "sell_price": 27.85,
+      "qty": 300.0,
+      "pnl": 1716.0000000000007,
+      "side": "long",
+      "account_type": "\u73fe\u91d1",
+      "realized_date": "2026-05-07 00:00:00"
+    },
+    {
+      "symbol": "\u6280\u5609",
+      "buy_date": "2026-03-03 00:00:00",
+      "buy_price": 230.0,
+      "sell_date": "2026-05-07 00:00:00",
+      "sell_price": 312.5,
+      "qty": 10.0,
+      "pnl": 825.0,
+      "side": "long",
+      "account_type": "\u73fe\u91d1",
+      "realized_date": "2026-05-07 00:00:00"
+    },
+    {
+      "symbol": "\u7a69\u61cb",
+      "buy_date": "2026-04-27 00:00:00",
+      "buy_price": 503.0,
+      "sell_date": "2026-05-07 00:00:00",
+      "sell_price": 508.0,
+      "qty": 2.0,
+      "pnl": 10.0,
+      "side": "long",
+      "account_type": "\u73fe\u91d1",
+      "realized_date": "2026-05-07 00:00:00"
+    },
+    {
+      "symbol": "\u7a69\u61cb",
+      "buy_date": "2026-04-27 00:00:00",
+      "buy_price": 496.0,
+      "sell_date": "2026-05-07 00:00:00",
+      "sell_price": 508.0,
+      "qty": 5.0,
+      "pnl": 60.0,
+      "side": "long",
+      "account_type": "\u73fe\u91d1",
+      "realized_date": "2026-05-07 00:00:00"
+    },
+    {
+      "symbol": "\u7a69\u61cb",
+      "buy_date": "2026-04-27 00:00:00",
+      "buy_price": 492.5,
+      "sell_date": "2026-05-07 00:00:00",
+      "sell_price": 508.0,
+      "qty": 3.0,
+      "pnl": 46.5,
+      "side": "long",
+      "account_type": "\u73fe\u91d1",
+      "realized_date": "2026-05-07 00:00:00"
+    },
+    {
+      "symbol": "\u7a69\u61cb",
+      "buy_date": "2026-04-27 00:00:00",
+      "buy_price": 492.5,
+      "sell_date": "2026-05-07 00:00:00",
+      "sell_price": 507.0,
+      "qty": 2.0,
+      "pnl": 29.0,
+      "side": "long",
+      "account_type": "\u73fe\u91d1",
+      "realized_date": "2026-05-07 00:00:00"
+    },
+    {
+      "symbol": "\u7a69\u61cb",
+      "buy_date": "2026-05-06 00:00:00",
+      "buy_price": 503.0,
+      "sell_date": "2026-05-07 00:00:00",
+      "sell_price": 507.0,
+      "qty": 5.0,
+      "pnl": 20.0,
+      "side": "long",
+      "account_type": "\u73fe\u91d1",
+      "realized_date": "2026-05-07 00:00:00"
+    },
+    {
+      "symbol": "\u570b\u6cf0\u6c38\u7e8c\u9ad8\u80a1\u606f",
+      "buy_date": "2024-11-18 00:00:00",
+      "buy_price": 22.13,
+      "sell_date": "2026-05-08 00:00:00",
+      "sell_price": 28.12,
+      "qty": 200.0,
+      "pnl": 1198.0000000000005,
+      "side": "long",
+      "account_type": "\u73fe\u91d1",
+      "realized_date": "2026-05-08 00:00:00"
+    },
+    {
+      "symbol": "\u570b\u6cf0\u6c38\u7e8c\u9ad8\u80a1\u606f",
+      "buy_date": "2024-11-18 00:00:00",
+      "buy_price": 22.13,
+      "sell_date": "2026-05-11 00:00:00",
+      "sell_price": 28.26,
+      "qty": 100.0,
+      "pnl": 613.0000000000002,
+      "side": "long",
+      "account_type": "\u73fe\u91d1",
+      "realized_date": "2026-05-11 00:00:00"
+    },
+    {
+      "symbol": "\u69ae\u79d1",
+      "buy_date": "2026-03-20 00:00:00",
+      "buy_price": 73.3,
+      "sell_date": "2026-05-11 00:00:00",
+      "sell_price": 96.0,
+      "qty": 10.0,
+      "pnl": 227.00000000000003,
+      "side": "long",
+      "account_type": "\u73fe\u91d1",
+      "realized_date": "2026-05-11 00:00:00"
+    },
+    {
+      "symbol": "\u53cb\u9054",
+      "buy_date": "2026-05-07 00:00:00",
+      "buy_price": 18.55,
+      "sell_date": "2026-05-14 00:00:00",
+      "sell_price": 19.5,
+      "qty": 80.0,
+      "pnl": 75.99999999999994,
+      "side": "long",
+      "account_type": "\u73fe\u91d1",
+      "realized_date": "2026-05-14 00:00:00"
+    },
+    {
+      "symbol": "\u53cb\u9054",
+      "buy_date": "2026-05-07 00:00:00",
+      "buy_price": 18.4,
+      "sell_date": "2026-05-14 00:00:00",
+      "sell_price": 19.5,
+      "qty": 100.0,
+      "pnl": 110.00000000000014,
+      "side": "long",
+      "account_type": "\u73fe\u91d1",
+      "realized_date": "2026-05-14 00:00:00"
+    },
+    {
+      "symbol": "\u53cb\u9054",
+      "buy_date": "2026-05-08 00:00:00",
+      "buy_price": 17.85,
+      "sell_date": "2026-05-14 00:00:00",
+      "sell_price": 19.5,
+      "qty": 80.0,
+      "pnl": 131.9999999999999,
+      "side": "long",
+      "account_type": "\u73fe\u91d1",
+      "realized_date": "2026-05-14 00:00:00"
+    }
+  ],
+  "unrealized": [
+    3952.62,
+    4286.97,
+    3618.11,
+    6029.5,
+    6338.56,
+    55250.0,
+    6627.0599999999995,
+    6723.0,
+    5055.0,
+    598.5000000000001,
+    1012.6800000000001,
+    55675.0,
+    2430.0,
+    11800.0,
+    9640.0,
+    52.0,
+    -120.0,
+    -40.0,
+    -70.0,
+    -15.0,
+    0.0,
+    -247.99999999999983,
+    -2565.0,
+    -468.99999999999994,
+    -325.00000000000017,
+    -320.0000000000001,
+    -70.49999999999999,
+    -460.0000000000001,
+    -117.49999999999999,
+    -52.5,
+    -159.99999999999997,
+    -77.50000000000003,
+    -40.000000000000036,
+    -2.5000000000000355,
+    2.4999999999999467,
+    -499.5000000000001,
+    -728.9999999999999,
+    -163.19999999999993,
+    670.0,
+    365.0,
+    1095.0,
+    720.0,
+    730.0,
+    750.0,
+    1245.0,
+    440.0,
+    400.0,
+    -30.0,
+    -52.250000000000014,
+    -101.49999999999999,
+    -462.5,
+    -191.00000000000009,
+    -412.5,
+    -205.50000000000006,
+    5.999999999999872,
+    115.50000000000004,
+    75.99999999999994,
+    0.0,
+    -255.4999999999999,
+    192.00000000000003,
+    25.0,
+    -47.5,
+    -135.0,
+    -145.0,
+    75.0,
+    290.0,
+    93.0,
+    195.0,
+    90.0,
+    384.0,
+    210.0,
+    435.0,
+    490.0
+  ],
+  "health": {
+    "total": 216590.4,
+    "win_rate": 0.9298245614035088,
+    "profit_factor": 6.660259867876476,
+    "score": 100.0
+  },
+  "reconciliation": {
+    "enabled": true,
+    "total_buy_amount": -733166.0,
+    "total_sell_amount": 438744.0,
+    "net_cashflow": -294422.0,
+    "remaining_cost_basis": 329959.8,
+    "realized_total": 36989.850000000006,
+    "expected_realized": 35537.79999999999,
+    "delta": 1452.0500000000175
+  },
+  "timeseries": {
+    "daily": [
+      {
+        "date": "2024-04-09",
+        "total": 12.500000000000178,
+        "by_account": {
+          "\u73fe\u91d1": 12.500000000000178
+        },
+        "cumulative_total": 12.500000000000178,
+        "drawdown": 0.0
+      },
+      {
+        "date": "2026-01-22",
+        "total": 1060.0000000000007,
+        "by_account": {
+          "\u73fe\u91d1": 1060.0000000000007
+        },
+        "cumulative_total": 1072.500000000001,
+        "drawdown": 0.0
+      },
+      {
+        "date": "2026-01-23",
+        "total": 1044.0000000000005,
+        "by_account": {
+          "\u73fe\u91d1": 1044.0000000000005
+        },
+        "cumulative_total": 2116.5000000000014,
+        "drawdown": 0.0
+      },
+      {
+        "date": "2026-01-26",
+        "total": 1995.0100000000102,
+        "by_account": {
+          "\u73fe\u91d1": 1995.0100000000102
+        },
+        "cumulative_total": 4111.510000000011,
+        "drawdown": 0.0
+      },
+      {
+        "date": "2026-01-27",
+        "total": 560.0000000000005,
+        "by_account": {
+          "\u73fe\u91d1": 560.0000000000005
+        },
+        "cumulative_total": 4671.510000000011,
+        "drawdown": 0.0
+      },
+      {
+        "date": "2026-02-11",
+        "total": 450.0000000000011,
+        "by_account": {
+          "\u73fe\u91d1": 450.0000000000011
+        },
+        "cumulative_total": 5121.510000000012,
+        "drawdown": 0.0
+      },
+      {
+        "date": "2026-02-23",
+        "total": 2483.9999999999905,
+        "by_account": {
+          "\u73fe\u91d1": 2483.9999999999905
+        },
+        "cumulative_total": 7605.510000000002,
+        "drawdown": 0.0
+      },
+      {
+        "date": "2026-02-24",
+        "total": 665.0,
+        "by_account": {
+          "\u73fe\u91d1": 665.0
+        },
+        "cumulative_total": 8270.510000000002,
+        "drawdown": 0.0
+      },
+      {
+        "date": "2026-02-26",
+        "total": 1920.0,
+        "by_account": {
+          "\u73fe\u91d1": 1920.0
+        },
+        "cumulative_total": 10190.510000000002,
+        "drawdown": 0.0
+      },
+      {
+        "date": "2026-03-04",
+        "total": 1.0000000000000142,
+        "by_account": {
+          "\u73fe\u91d1": 1.0000000000000142
+        },
+        "cumulative_total": 10191.510000000002,
+        "drawdown": 0.0
+      },
+      {
+        "date": "2026-03-19",
+        "total": 450.0,
+        "by_account": {
+          "\u73fe\u91d1": 450.0
+        },
+        "cumulative_total": 10641.510000000002,
+        "drawdown": 0.0
+      },
+      {
+        "date": "2026-03-20",
+        "total": 3500.0,
+        "by_account": {
+          "\u73fe\u91d1": 3500.0
+        },
+        "cumulative_total": 14141.510000000002,
+        "drawdown": 0.0
+      },
+      {
+        "date": "2026-03-23",
+        "total": 3000.0,
+        "by_account": {
+          "\u73fe\u91d1": 3000.0
+        },
+        "cumulative_total": 17141.510000000002,
+        "drawdown": 0.0
+      },
+      {
+        "date": "2026-03-27",
+        "total": 126.79999999999997,
+        "by_account": {
+          "\u73fe\u91d1": 126.79999999999997
+        },
+        "cumulative_total": 17268.31,
+        "drawdown": 0.0
+      },
+      {
+        "date": "2026-04-24",
+        "total": 2311.0,
+        "by_account": {
+          "\u73fe\u91d1": 2311.0
+        },
+        "cumulative_total": 19579.31,
+        "drawdown": 0.0
+      },
+      {
+        "date": "2026-04-28",
+        "total": 3228.1800000000007,
+        "by_account": {
+          "\u73fe\u91d1": 3228.1800000000007
+        },
+        "cumulative_total": 22807.49,
+        "drawdown": 0.0
+      },
+      {
+        "date": "2026-04-29",
+        "total": 240.00000000000023,
+        "by_account": {
+          "\u73fe\u91d1": 240.00000000000023
+        },
+        "cumulative_total": 23047.49,
+        "drawdown": 0.0
+      },
+      {
+        "date": "2026-04-30",
+        "total": 3854.100000000002,
+        "by_account": {
+          "\u73fe\u91d1": 3854.100000000002
+        },
+        "cumulative_total": 26901.590000000004,
+        "drawdown": 0.0
+      },
+      {
+        "date": "2026-05-04",
+        "total": 4012.2599999999984,
+        "by_account": {
+          "\u73fe\u91d1": 4012.2599999999984
+        },
+        "cumulative_total": 30913.850000000002,
+        "drawdown": 0.0
+      },
+      {
+        "date": "2026-05-05",
+        "total": 878.0000000000001,
+        "by_account": {
+          "\u73fe\u91d1": 878.0000000000001
+        },
+        "cumulative_total": 31791.850000000002,
+        "drawdown": 0.0
+      },
+      {
+        "date": "2026-05-06",
+        "total": 135.49999999999997,
+        "by_account": {
+          "\u73fe\u91d1": 135.49999999999997
+        },
+        "cumulative_total": 31927.350000000002,
+        "drawdown": 0.0
+      },
+      {
+        "date": "2026-05-07",
+        "total": 2706.500000000001,
+        "by_account": {
+          "\u73fe\u91d1": 2706.500000000001
+        },
+        "cumulative_total": 34633.850000000006,
+        "drawdown": 0.0
+      },
+      {
+        "date": "2026-05-08",
+        "total": 1198.0000000000005,
+        "by_account": {
+          "\u73fe\u91d1": 1198.0000000000005
+        },
+        "cumulative_total": 35831.850000000006,
+        "drawdown": 0.0
+      },
+      {
+        "date": "2026-05-11",
+        "total": 840.0000000000002,
+        "by_account": {
+          "\u73fe\u91d1": 840.0000000000002
+        },
+        "cumulative_total": 36671.850000000006,
+        "drawdown": 0.0
+      },
+      {
+        "date": "2026-05-14",
+        "total": 318.0,
+        "by_account": {
+          "\u73fe\u91d1": 318.0
+        },
+        "cumulative_total": 36989.850000000006,
+        "drawdown": 0.0
+      }
+    ],
+    "weekly": [
+      {
+        "date": "2024-04-08",
+        "total": 12.500000000000178,
+        "by_account": {
+          "\u73fe\u91d1": 12.500000000000178
+        },
+        "cumulative_total": 12.500000000000178,
+        "drawdown": 0.0
+      },
+      {
+        "date": "2026-01-19",
+        "total": 2104.000000000001,
+        "by_account": {
+          "\u73fe\u91d1": 2104.000000000001
+        },
+        "cumulative_total": 2116.500000000001,
+        "drawdown": 0.0
+      },
+      {
+        "date": "2026-01-26",
+        "total": 2555.0100000000107,
+        "by_account": {
+          "\u73fe\u91d1": 2555.0100000000107
+        },
+        "cumulative_total": 4671.510000000011,
+        "drawdown": 0.0
+      },
+      {
+        "date": "2026-02-09",
+        "total": 450.0000000000011,
+        "by_account": {
+          "\u73fe\u91d1": 450.0000000000011
+        },
+        "cumulative_total": 5121.510000000012,
+        "drawdown": 0.0
+      },
+      {
+        "date": "2026-02-23",
+        "total": 5068.999999999991,
+        "by_account": {
+          "\u73fe\u91d1": 5068.999999999991
+        },
+        "cumulative_total": 10190.510000000002,
+        "drawdown": 0.0
+      },
+      {
+        "date": "2026-03-02",
+        "total": 1.0000000000000142,
+        "by_account": {
+          "\u73fe\u91d1": 1.0000000000000142
+        },
+        "cumulative_total": 10191.510000000002,
+        "drawdown": 0.0
+      },
+      {
+        "date": "2026-03-16",
+        "total": 3950.0,
+        "by_account": {
+          "\u73fe\u91d1": 3950.0
+        },
+        "cumulative_total": 14141.510000000002,
+        "drawdown": 0.0
+      },
+      {
+        "date": "2026-03-23",
+        "total": 3126.8,
+        "by_account": {
+          "\u73fe\u91d1": 3126.8
+        },
+        "cumulative_total": 17268.31,
+        "drawdown": 0.0
+      },
+      {
+        "date": "2026-04-20",
+        "total": 2311.0,
+        "by_account": {
+          "\u73fe\u91d1": 2311.0
+        },
+        "cumulative_total": 19579.31,
+        "drawdown": 0.0
+      },
+      {
+        "date": "2026-04-27",
+        "total": 7322.2800000000025,
+        "by_account": {
+          "\u73fe\u91d1": 7322.2800000000025
+        },
+        "cumulative_total": 26901.590000000004,
+        "drawdown": 0.0
+      },
+      {
+        "date": "2026-05-04",
+        "total": 8930.26,
+        "by_account": {
+          "\u73fe\u91d1": 8930.26
+        },
+        "cumulative_total": 35831.850000000006,
+        "drawdown": 0.0
+      },
+      {
+        "date": "2026-05-11",
+        "total": 1158.0000000000002,
+        "by_account": {
+          "\u73fe\u91d1": 1158.0000000000002
+        },
+        "cumulative_total": 36989.850000000006,
+        "drawdown": 0.0
+      }
+    ],
+    "monthly": [
+      {
+        "date": "2024-04-01",
+        "total": 12.500000000000178,
+        "by_account": {
+          "\u73fe\u91d1": 12.500000000000178
+        },
+        "cumulative_total": 12.500000000000178,
+        "drawdown": 0.0
+      },
+      {
+        "date": "2026-01-01",
+        "total": 4659.010000000012,
+        "by_account": {
+          "\u73fe\u91d1": 4659.010000000012
+        },
+        "cumulative_total": 4671.510000000012,
+        "drawdown": 0.0
+      },
+      {
+        "date": "2026-02-01",
+        "total": 5518.999999999992,
+        "by_account": {
+          "\u73fe\u91d1": 5518.999999999992
+        },
+        "cumulative_total": 10190.510000000004,
+        "drawdown": 0.0
+      },
+      {
+        "date": "2026-03-01",
+        "total": 7077.8,
+        "by_account": {
+          "\u73fe\u91d1": 7077.8
+        },
+        "cumulative_total": 17268.310000000005,
+        "drawdown": 0.0
+      },
+      {
+        "date": "2026-04-01",
+        "total": 9633.280000000002,
+        "by_account": {
+          "\u73fe\u91d1": 9633.280000000002
+        },
+        "cumulative_total": 26901.590000000007,
+        "drawdown": 0.0
+      },
+      {
+        "date": "2026-05-01",
+        "total": 10088.26,
+        "by_account": {
+          "\u73fe\u91d1": 10088.26
+        },
+        "cumulative_total": 36989.850000000006,
+        "drawdown": 0.0
+      }
+    ],
+    "max_drawdown": {
+      "daily": 0.0,
+      "weekly": 0.0,
+      "monthly": 0.0
+    }
+  },
+  "invested_cost": {
+    "enabled": false,
+    "reason": "Invested cost disabled for Cathay Securities CSV."
+  },
+  "performance_summary": {
+    "enabled": false,
+    "invested_cost": 0.0,
+    "realized_pnl": 36989.850000000006,
+    "unrealized_pnl": 179600.55,
+    "total_pnl": 216590.4,
+    "return_pct": 0.0,
+    "realized_return_pct": 0.0,
+    "unrealized_return_pct": 0.0
+  },
+  "asset_value": {
+    "enabled": true,
+    "cash_by_account": {
+      "\u73fe\u91d1": -294422.0
+    },
+    "holdings_by_account": {
+      "\u73fe\u91d1": 509560.35
+    },
+    "total_by_account": {
+      "\u73fe\u91d1": 215138.34999999998
+    },
+    "total": 215138.34999999998
+  },
+  "asset_allocation": {
+    "enabled": true,
+    "cash_balance": -294422.0,
+    "cash_stock": 509560.35,
+    "margin_stock": 0.0,
+    "other": 0.0,
+    "total": 215138.34999999998,
+    "ratios": {
+      "cash_balance": -1.368524021867789,
+      "cash_stock": 2.3685240218677888,
+      "margin_stock": 0.0,
+      "other": 0.0
+    }
+  },
+  "pnl_by_account": {
+    "enabled": true,
+    "realized": {
+      "\u73fe\u91d1": 36989.850000000006
+    },
+    "unrealized": {
+      "\u73fe\u91d1": 179600.55
+    },
+    "total": {
+      "\u73fe\u91d1": 216590.4
+    },
+    "total_all": 216590.4
+  },
+  "market_prices": {
+    "prices": {
+      "\u4e2d\u5de5": 13.35,
+      "\u5143\u5927\u53f0\u706350": 95.5,
+      "\u5143\u6676": 42.15,
+      "\u53ef\u5be7\u885b*": 27.1,
+      "\u53f0\u7a4d\u96fb": 2220.0,
+      "\u570b\u6cf0\u6c38\u7e8c\u9ad8\u80a1\u606f": 27.95,
+      "\u5927\u773e\u63a7": 59.0,
+      "\u5bcc\u90a6\u53f050": 221.2,
+      "\u671f\u5143\u5927S&P\u9ec3\u91d1": 49.26,
+      "\u69ae\u79d1": 92.5,
+      "\u71ff\u83ef": 61.2,
+      "\u7a69\u61cb": 486.0,
+      "\u7f8e\u6642": 205.5,
+      "\u806f\u53cb\u91d1\u5c6c-\u5275": 858.0,
+      "\u958e\u5eb7": 313.5
+    },
+    "sources": {
+      "\u4e2d\u5de5": "twse_name",
+      "\u5143\u5927\u53f0\u706350": "twse_name",
+      "\u5143\u6676": "twse_name",
+      "\u53ef\u5be7\u885b*": "twse_name",
+      "\u53f0\u7a4d\u96fb": "twse_name",
+      "\u570b\u6cf0\u6c38\u7e8c\u9ad8\u80a1\u606f": "twse_name",
+      "\u5927\u773e\u63a7": "twse_name",
+      "\u5bcc\u90a6\u53f050": "twse_name",
+      "\u671f\u5143\u5927S&P\u9ec3\u91d1": "twse_name",
+      "\u69ae\u79d1": "twse_name",
+      "\u71ff\u83ef": "twse_name",
+      "\u7a69\u61cb": "last_transaction",
+      "\u7f8e\u6642": "twse_name",
+      "\u806f\u53cb\u91d1\u5c6c-\u5275": "twse_name",
+      "\u958e\u5eb7": "last_transaction"
+    },
+    "warnings": {
+      "tls": "TLS verification disabled (verify=False)."
+    }
+  },
+  "risk_metrics": {
+    "enabled": false,
+    "reason": "daily returns require realized PnL and positive invested capital",
+    "risk_free": {
+      "annual_rate": 0.05,
+      "source": "fallback",
+      "label": "Risk-free rate fallback"
+    }
+  },
+  "symbol_analysis": {
+    "enabled": true,
+    "current_count": 15,
+    "closed_count": 7,
+    "symbols": [
+      {
+        "symbol": "\u4e2d\u5de5",
+        "status": "current",
+        "qty": 950.0,
+        "trade_count": 2,
+        "win_rate": 1.0,
+        "realized_pnl": 451.0000000000011,
+        "unrealized_pnl": -2092.0,
+        "total_pnl": -1640.9999999999989,
+        "market_value": 12682.5,
+        "cost": 14774.5,
+        "avg_cost": 15.552105263157895,
+        "last_price": 13.35,
+        "price_source": "twse_name",
+        "last_trade_date": "2026-03-04",
+        "best_trade": 450.0000000000011,
+        "worst_trade": 1.0000000000000142
+      },
+      {
+        "symbol": "\u4e2d\u63a2\u91dd",
+        "status": "closed",
+        "qty": 0.0,
+        "trade_count": 7,
+        "win_rate": 0.8571428571428571,
+        "realized_pnl": 3684.0000000000014,
+        "unrealized_pnl": 0.0,
+        "total_pnl": 3684.0000000000014,
+        "market_value": 0.0,
+        "cost": 0.0,
+        "avg_cost": 0.0,
+        "last_price": 0.0,
+        "price_source": "missing",
+        "last_trade_date": "2026-02-23",
+        "best_trade": 1009.9999999999994,
+        "worst_trade": -249.9999999999993
+      },
+      {
+        "symbol": "\u5143\u5927\u53f0\u706350",
+        "status": "current",
+        "qty": 1900.0,
+        "trade_count": 0,
+        "win_rate": 0.0,
+        "realized_pnl": 0,
+        "unrealized_pnl": 98479.32,
+        "total_pnl": 98479.32,
+        "market_value": 181450.0,
+        "cost": 82970.68,
+        "avg_cost": 43.668778947368416,
+        "last_price": 95.5,
+        "price_source": "twse_name",
+        "last_trade_date": null,
+        "best_trade": 0.0,
+        "worst_trade": 0.0
+      },
+      {
+        "symbol": "\u5143\u5927\u9ad8\u80a1\u606f",
+        "status": "closed",
+        "qty": 0.0,
+        "trade_count": 1,
+        "win_rate": 1.0,
+        "realized_pnl": 12.500000000000178,
+        "unrealized_pnl": 0.0,
+        "total_pnl": 12.500000000000178,
+        "market_value": 0.0,
+        "cost": 0.0,
+        "avg_cost": 0.0,
+        "last_price": 0.0,
+        "price_source": "missing",
+        "last_trade_date": "2024-04-09",
+        "best_trade": 12.500000000000178,
+        "worst_trade": 12.500000000000178
+      },
+      {
+        "symbol": "\u5143\u6676",
+        "status": "current",
+        "qty": 245.0,
+        "trade_count": 0,
+        "win_rate": 0.0,
+        "realized_pnl": 0,
+        "unrealized_pnl": -1227.75,
+        "total_pnl": -1227.75,
+        "market_value": 10326.75,
+        "cost": 11554.5,
+        "avg_cost": 47.16122448979592,
+        "last_price": 42.15,
+        "price_source": "twse_name",
+        "last_trade_date": null,
+        "best_trade": 0.0,
+        "worst_trade": 0.0
+      },
+      {
+        "symbol": "\u5357\u8302",
+        "status": "closed",
+        "qty": 0.0,
+        "trade_count": 2,
+        "win_rate": 1.0,
+        "realized_pnl": 245.99999999999994,
+        "unrealized_pnl": 0.0,
+        "total_pnl": 245.99999999999994,
+        "market_value": 0.0,
+        "cost": 0.0,
+        "avg_cost": 0.0,
+        "last_price": 0.0,
+        "price_source": "missing",
+        "last_trade_date": "2026-05-06",
+        "best_trade": 135.49999999999997,
+        "worst_trade": 110.49999999999997
+      },
+      {
+        "symbol": "\u53cb\u9054",
+        "status": "closed",
+        "qty": 0.0,
+        "trade_count": 3,
+        "win_rate": 1.0,
+        "realized_pnl": 318.0,
+        "unrealized_pnl": 0.0,
+        "total_pnl": 318.0,
+        "market_value": 0.0,
+        "cost": 0.0,
+        "avg_cost": 0.0,
+        "last_price": 0.0,
+        "price_source": "missing",
+        "last_trade_date": "2026-05-14",
+        "best_trade": 131.9999999999999,
+        "worst_trade": 75.99999999999994
+      },
+      {
+        "symbol": "\u53ef\u5be7\u885b*",
+        "status": "current",
+        "qty": 150.0,
+        "trade_count": 0,
+        "win_rate": 0.0,
+        "realized_pnl": 0,
+        "unrealized_pnl": -2565.0,
+        "total_pnl": -2565.0,
+        "market_value": 4065.0,
+        "cost": 6630.0,
+        "avg_cost": 44.2,
+        "last_price": 27.1,
+        "price_source": "twse_name",
+        "last_trade_date": null,
+        "best_trade": 0.0,
+        "worst_trade": 0.0
+      },
+      {
+        "symbol": "\u53f0\u7a4d\u96fb",
+        "status": "current",
+        "qty": 18.0,
+        "trade_count": 0,
+        "win_rate": 0.0,
+        "realized_pnl": 0,
+        "unrealized_pnl": 6385.0,
+        "total_pnl": 6385.0,
+        "market_value": 39960.0,
+        "cost": 33575.0,
+        "avg_cost": 1865.2777777777778,
+        "last_price": 2220.0,
+        "price_source": "twse_name",
+        "last_trade_date": null,
+        "best_trade": 0.0,
+        "worst_trade": 0.0
+      },
+      {
+        "symbol": "\u570b\u5de8*",
+        "status": "closed",
+        "qty": 0.0,
+        "trade_count": 3,
+        "win_rate": 1.0,
+        "realized_pnl": 2632.5,
+        "unrealized_pnl": 0.0,
+        "total_pnl": 2632.5,
+        "market_value": 0.0,
+        "cost": 0.0,
+        "avg_cost": 0.0,
+        "last_price": 0.0,
+        "price_source": "missing",
+        "last_trade_date": "2026-04-24",
+        "best_trade": 1310.0,
+        "worst_trade": 657.5
+      },
+      {
+        "symbol": "\u570b\u6cf0\u6c38\u7e8c\u9ad8\u80a1\u606f",
+        "status": "current",
+        "qty": 174.0,
+        "trade_count": 16,
+        "win_rate": 0.8125,
+        "realized_pnl": 14064.550000000003,
+        "unrealized_pnl": 1012.6800000000003,
+        "total_pnl": 15077.230000000003,
+        "market_value": 4863.3,
+        "cost": 3850.62,
+        "avg_cost": 22.13,
+        "last_price": 27.95,
+        "price_source": "twse_name",
+        "last_trade_date": "2026-05-11",
+        "best_trade": 3103.7399999999984,
+        "worst_trade": -128.58999999999992
+      },
+      {
+        "symbol": "\u5927\u773e\u63a7",
+        "status": "current",
+        "qty": 35.0,
+        "trade_count": 0,
+        "win_rate": 0.0,
+        "realized_pnl": 0,
+        "unrealized_pnl": -255.5,
+        "total_pnl": -255.5,
+        "market_value": 2065.0,
+        "cost": 2320.5,
+        "avg_cost": 66.3,
+        "last_price": 59.0,
+        "price_source": "twse_name",
+        "last_trade_date": null,
+        "best_trade": 0.0,
+        "worst_trade": 0.0
+      },
+      {
+        "symbol": "\u5bcc\u90a6\u53f050",
+        "status": "current",
+        "qty": 500.0,
+        "trade_count": 0,
+        "win_rate": 0.0,
+        "realized_pnl": 0,
+        "unrealized_pnl": 55675.0,
+        "total_pnl": 55675.0,
+        "market_value": 110600.0,
+        "cost": 54925.0,
+        "avg_cost": 109.85,
+        "last_price": 221.2,
+        "price_source": "twse_name",
+        "last_trade_date": null,
+        "best_trade": 0.0,
+        "worst_trade": 0.0
+      },
+      {
+        "symbol": "\u6280\u5609",
+        "status": "closed",
+        "qty": 0.0,
+        "trade_count": 2,
+        "win_rate": 1.0,
+        "realized_pnl": 1245.0,
+        "unrealized_pnl": 0.0,
+        "total_pnl": 1245.0,
+        "market_value": 0.0,
+        "cost": 0.0,
+        "avg_cost": 0.0,
+        "last_price": 0.0,
+        "price_source": "missing",
+        "last_trade_date": "2026-05-07",
+        "best_trade": 825.0,
+        "worst_trade": 420.0
+      },
+      {
+        "symbol": "\u671f\u5143\u5927S&P\u9ec3\u91d1",
+        "status": "current",
+        "qty": 230.0,
+        "trade_count": 0,
+        "win_rate": 0.0,
+        "realized_pnl": 0,
+        "unrealized_pnl": -1391.7000000000007,
+        "total_pnl": -1391.7000000000007,
+        "market_value": 11329.8,
+        "cost": 12721.5,
+        "avg_cost": 55.31086956521739,
+        "last_price": 49.26,
+        "price_source": "twse_name",
+        "last_trade_date": null,
+        "best_trade": 0.0,
+        "worst_trade": 0.0
+      },
+      {
+        "symbol": "\u69ae\u79d1",
+        "status": "current",
+        "qty": 20.0,
+        "trade_count": 3,
+        "win_rate": 1.0,
+        "realized_pnl": 1168.0000000000002,
+        "unrealized_pnl": 217.0,
+        "total_pnl": 1385.0000000000002,
+        "market_value": 1850.0,
+        "cost": 1633.0,
+        "avg_cost": 81.65,
+        "last_price": 92.5,
+        "price_source": "twse_name",
+        "last_trade_date": "2026-05-11",
+        "best_trade": 767.5000000000001,
+        "worst_trade": 173.5
+      },
+      {
+        "symbol": "\u71ff\u83ef",
+        "status": "current",
+        "qty": 20.0,
+        "trade_count": 3,
+        "win_rate": 1.0,
+        "realized_pnl": 1170.8000000000004,
+        "unrealized_pnl": -248.0,
+        "total_pnl": 922.8000000000004,
+        "market_value": 1224.0,
+        "cost": 1472.0,
+        "avg_cost": 73.6,
+        "last_price": 61.2,
+        "price_source": "twse_name",
+        "last_trade_date": "2026-03-27",
+        "best_trade": 1044.0000000000005,
+        "worst_trade": 38.8
+      },
+      {
+        "symbol": "\u7a69\u61cb",
+        "status": "current",
+        "qty": 5.0,
+        "trade_count": 8,
+        "win_rate": 1.0,
+        "realized_pnl": 2327.5,
+        "unrealized_pnl": 0.0,
+        "total_pnl": 2327.5,
+        "market_value": 2430.0,
+        "cost": 2430.0,
+        "avg_cost": 486.0,
+        "last_price": 486.0,
+        "price_source": "last_transaction",
+        "last_trade_date": "2026-05-07",
+        "best_trade": 1060.0,
+        "worst_trade": 10.0
+      },
+      {
+        "symbol": "\u7f8e\u6642",
+        "status": "current",
+        "qty": 30.0,
+        "trade_count": 0,
+        "win_rate": 0.0,
+        "realized_pnl": 0,
+        "unrealized_pnl": -252.5,
+        "total_pnl": -252.5,
+        "market_value": 6165.0,
+        "cost": 6417.5,
+        "avg_cost": 213.91666666666666,
+        "last_price": 205.5,
+        "price_source": "twse_name",
+        "last_trade_date": null,
+        "best_trade": 0.0,
+        "worst_trade": 0.0
+      },
+      {
+        "symbol": "\u7fa4\u76ca\u53f0\u7063\u7cbe\u9078\u9ad8\u606f",
+        "status": "closed",
+        "qty": 0.0,
+        "trade_count": 2,
+        "win_rate": 1.0,
+        "realized_pnl": 800.0000000000007,
+        "unrealized_pnl": 0.0,
+        "total_pnl": 800.0000000000007,
+        "market_value": 0.0,
+        "cost": 0.0,
+        "avg_cost": 0.0,
+        "last_price": 0.0,
+        "price_source": "missing",
+        "last_trade_date": "2026-04-29",
+        "best_trade": 560.0000000000005,
+        "worst_trade": 240.00000000000023
+      },
+      {
+        "symbol": "\u806f\u53cb\u91d1\u5c6c-\u5275",
+        "status": "current",
+        "qty": 36.0,
+        "trade_count": 0,
+        "win_rate": 0.0,
+        "realized_pnl": 0,
+        "unrealized_pnl": 2187.0,
+        "total_pnl": 2187.0,
+        "market_value": 30888.0,
+        "cost": 28701.0,
+        "avg_cost": 797.25,
+        "last_price": 858.0,
+        "price_source": "twse_name",
+        "last_trade_date": null,
+        "best_trade": 0.0,
+        "worst_trade": 0.0
+      },
+      {
+        "symbol": "\u958e\u5eb7",
+        "status": "current",
+        "qty": 286.0,
+        "trade_count": 5,
+        "win_rate": 1.0,
+        "realized_pnl": 8870.0,
+        "unrealized_pnl": 23677.0,
+        "total_pnl": 32547.0,
+        "market_value": 89661.0,
+        "cost": 65984.0,
+        "avg_cost": 230.71328671328672,
+        "last_price": 313.5,
+        "price_source": "last_transaction",
+        "last_trade_date": "2026-03-23",
+        "best_trade": 3000.0,
+        "worst_trade": 450.0
+      }
+    ]
+  },
+  "recommendations": [
+    {
+      "tone": "info",
+      "title": "\u6295\u5165\u6210\u672c\u672a\u8a2d\u5b9a",
+      "body": "\u76ee\u524d\u672a\u8a08\u7b97\u6295\u5165\u6210\u672c\uff0c\u56e0\u6b64\u5831\u916c\u7387\u8207 Sharpe Ratio \u5148\u505c\u7528\u3002"
+    },
+    {
+      "tone": "praise",
+      "title": "\u5df2\u5be6\u73fe\u8207\u672a\u5be6\u73fe\u6536\u76ca\u540c\u6b65",
+      "body": "\u5df2\u843d\u888b\u8207\u73fe\u5009\u6d6e\u76c8\u7686\u70ba\u6b63\uff0c\u8868\u793a\u4ea4\u6613\u7bc0\u594f\u8207\u6301\u5009\u54c1\u8cea\u76ee\u524d\u914d\u5408\u826f\u597d\u3002"
+    },
+    {
+      "tone": "praise",
+      "title": "\u52dd\u7387\u8207\u76c8\u8667\u6bd4\u7d50\u69cb\u5065\u5eb7",
+      "body": "\u52dd\u7387\u548c Profit Factor \u540c\u6642\u7ad9\u5728\u8f03\u4f73\u5340\u9593\uff0c\u4ee3\u8868\u7b56\u7565\u4e0d\u662f\u53ea\u9760\u55ae\u4e00\u5927\u8cfa\u4ea4\u6613\u652f\u6490\u3002"
+    },
+    {
+      "tone": "warn",
+      "title": "\u53ef\u5be7\u885b* \u662f\u76ee\u524d\u4e3b\u8981\u6d6e\u8667\u4f86\u6e90",
+      "body": "\u5efa\u8b70\u78ba\u8a8d\u5b83\u7684\u90e8\u4f4d\u5927\u5c0f\u3001\u505c\u640d\u7dda\u8207\u6301\u6709\u7406\u7531\u662f\u5426\u4ecd\u7136\u4e00\u81f4\u3002"
+    }
+  ],
+  "metric_audit": {
+    "enabled": true,
+    "checks": [
+      {
+        "name": "Total PnL",
+        "formula": "sum(realized pnl) + sum(unrealized pnl)",
+        "expected": 216590.4,
+        "actual": 216590.4,
+        "delta": 0.0,
+        "tolerance": 0.01,
+        "status": "ok"
+      },
+      {
+        "name": "Win Rate",
+        "formula": "winning realized trades / realized trades",
+        "expected": 0.9298245614035088,
+        "actual": 0.9298245614035088,
+        "delta": 0.0,
+        "tolerance": 0.0001,
+        "status": "ok"
+      },
+      {
+        "name": "Profit Factor",
+        "formula": "average win / abs(average loss)",
+        "expected": 6.660259867876476,
+        "actual": 6.660259867876476,
+        "delta": 0.0,
+        "tolerance": 0.0001,
+        "status": "ok"
+      },
+      {
+        "name": "Health Score",
+        "formula": "clamp(50 + profit_factor * 10, 0, 100)",
+        "expected": 100.0,
+        "actual": 100.0,
+        "delta": 0.0,
+        "tolerance": 0.0001,
+        "status": "ok"
+      },
+      {
+        "name": "Daily Realized Sum",
+        "formula": "last daily cumulative total",
+        "expected": 36989.850000000006,
+        "actual": 36989.850000000006,
+        "delta": 0.0,
+        "tolerance": 0.01,
+        "status": "ok"
+      },
+      {
+        "name": "Reconciliation Delta",
+        "formula": "realized_total - (net_cashflow + remaining_cost_basis)",
+        "expected": 1452.0500000000175,
+        "actual": 1452.0500000000175,
+        "delta": 0.0,
+        "tolerance": 0.01,
+        "status": "ok"
+      },
+      {
+        "name": "Asset Value",
+        "formula": "sum(total_by_account)",
+        "expected": 215138.34999999998,
+        "actual": 215138.34999999998,
+        "delta": 0.0,
+        "tolerance": 0.01,
+        "status": "ok"
+      },
+      {
+        "name": "Allocation Ratio",
+        "formula": "cash + cash stock + margin stock + other ratios",
+        "expected": 1.0,
+        "actual": 0.9999999999999998,
+        "delta": -2.220446049250313e-16,
+        "tolerance": 0.001,
+        "status": "ok"
+      }
+    ],
+    "positions_reference": {
+      "enabled": false,
+      "source": null,
+      "checks": []
+    },
+    "status": "ok"
+  },
+  "llm_checkup": {
+    "enabled": true,
+    "model": "local-summary",
+    "generated_at": "2026-05-14T17:16:01+00:00",
+    "content": "### \u6982\u6cc1\u6458\u8981\n- \u76ee\u524d\u7e3d\u640d\u76ca\u70ba\u6b63\uff0c\u6574\u9ad4\u8655\u5728\u53ef\u63a7\u7684\u6b63\u5411\u5340\u9593\u3002\n\n### \u512a\u52e2\u4eae\u9ede\n- \u52dd\u7387\u4fdd\u6301\u5728\u4e2d\u9ad8\u6c34\u6e96\uff0c\u4ea4\u6613\u7bc0\u594f\u5177\u7a69\u5b9a\u6027\u3002\n- \u76c8\u8667\u6bd4\u7d50\u69cb\u4e0d\u932f\uff0c\u5e73\u5747\u7372\u5229\u6709\u8986\u84cb\u5e73\u5747\u8667\u640d\u3002\n- \u5df2\u5be6\u73fe\u8207\u672a\u5be6\u73fe\u640d\u76ca\u540c\u6b65\u70ba\u6b63\uff0c\u98a8\u96aa\u91cb\u653e\u826f\u597d\u3002\n- \u4e3b\u8981\u7372\u5229\u8ca2\u737b\u96c6\u4e2d\u5728\uff1a\u5143\u5927\u53f0\u706350\u3001\u5bcc\u90a6\u53f050\u3001\u958e\u5eb7\u3002\n\n### \u98a8\u96aa\u8207\u76f2\u9ede\n- \u76ee\u524d\u6d6e\u8667\u90e8\u4f4d\u5305\u542b\uff1a\u53ef\u5be7\u885b*\u3001\u4e2d\u5de5\u3001\u671f\u5143\u5927S&P\u9ec3\u91d1\u3002\n\n### \u53ef\u57f7\u884c\u7684\u4e0b\u4e00\u6b65\n- \u6aa2\u67e5\u6d6e\u8667\u90e8\u4f4d\u7684\u6301\u6709\u7406\u7531\u8207\u505c\u640d\u689d\u4ef6\u662f\u5426\u4ecd\u6210\u7acb\u3002\n- \u7dad\u6301\u7372\u5229\u90e8\u4f4d\u7684\u98a8\u96aa\u63a7\u7ba1\uff0c\u907f\u514d\u7372\u5229\u56de\u5410\u3002\n- \u82e5\u672a\u4f86\u63d0\u4f9b\u8cc7\u91d1\u6295\u5165\u8cc7\u6599\uff0c\u53ef\u518d\u88dc\u4e0a\u5831\u916c\u7387\u8207 Sharpe \u4f30\u7b97\u3002\n\n\u975e\u6295\u8cc7\u5efa\u8b70",
+    "fallback_used": true
+  }
+}
